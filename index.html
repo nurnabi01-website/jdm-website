@@ -285,3 +285,277 @@
 
 </body>
 </html>
+<!-- ==================== PRELOADER (লোডিং অ্যানিমেশন) ==================== -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2 class="loader-logo">JDM Agency</h2>
+            <p class="loader-text">L O A D I N G</p>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SLIDER (মেইন ব্যানার) ==================== -->
+    <section class="hero-section">
+        <div class="slider-container">
+            
+            <!-- স্লাইড ১ -->
+            <div class="slide active">
+                <div class="slide-content">
+                    <p class="subtitle">Welcome to JDM Agency</p>
+                    <h1 class="title">Affordable All Digital <br><span class="highlight">Marketing Solutions</span></h1>
+                    <a href="#" class="btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <!-- স্লাইড ২ -->
+            <div class="slide">
+                <div class="slide-content">
+                    <p class="subtitle">We're 100% Trusted Agency</p>
+                    <h1 class="title">Digital Strategies <br>that <span class="highlight">Connect the World.</span></h1>
+                    <a href="#" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+
+            <!-- স্লাইড ৩ -->
+            <div class="slide">
+                <div class="slide-content">
+                    <p class="subtitle">15 years' Experience</p>
+                    <h1 class="title">Bridging Creativity & <br>for Tangible <span class="highlight">Impact</span></h1>
+                    <a href="#" class="btn-primary">Get Started</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- স্লাইডার কন্ট্রোল (ডান/বাম বাটন) -->
+        <button class="slider-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-angle-left"></i></button>
+        <button class="slider-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-angle-right"></i></button>
+        
+        <!-- স্লাইডার ডট -->
+        <div class="slider-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <!-- ==================== CSS (ডিজাইন ও অ্যানিমেশন) ==================== -->
+    <style>
+        /* --- Preloader CSS --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #e50000;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader-logo {
+            font-size: 24px;
+            color: #111;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .loader-text {
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 4px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Hero Slider CSS --- */
+        .hero-section {
+            position: relative;
+            background-color: #0f1115; /* কালো ব্যাকগ্রাউন্ড */
+            height: 80vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            padding-left: 10%;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .slide-content {
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.8s ease-in-out 0.3s;
+        }
+
+        .slide.active .slide-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .subtitle {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            color: #ffffff;
+            font-size: 55px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #e50000; /* লাল টেক্সট */
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: #e50000;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc0000;
+        }
+
+        /* স্লাইডার বাটন ও ডট */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+        }
+
+        .slider-btn:hover {
+            background-color: #e50000;
+            border-color: #e50000;
+        }
+
+        .prev-btn { left: 3%; }
+        .next-btn { right: 3%; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot.active {
+            background-color: #e50000;
+            border-color: #e50000;
+        }
+    </style>
+
+    <!-- ==================== JavaScript (অ্যানিমেশন কাজ করার জন্য) ==================== -->
+    <script>
+        // ১. লোডিং অ্যানিমেশন সরানোর কোড
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+            }, 1000); // ১ সেকেন্ড পর লোডিং চলে যাবে
+        });
+
+        // ২. স্লাইডার চেঞ্জ করার কোড
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            showSlide(currentSlideIndex);
+        }
+
+        function currentSlide(index) {
+            currentSlideIndex = index;
+            showSlide(currentSlideIndex);
+        }
+
+        // প্রতি ৫ সেকেন্ড পর পর অটোমেটিক স্লাইড চেঞ্জ হবে
+        setInterval(nextSlide, 5000);
+    </script>
