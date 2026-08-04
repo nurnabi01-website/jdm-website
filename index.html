@@ -559,3 +559,281 @@
         // প্রতি ৫ সেকেন্ড পর পর অটোমেটিক স্লাইড চেঞ্জ হবে
         setInterval(nextSlide, 5000);
     </script>
+<!-- ==================== FEATURE CARDS (৪টি বক্স) ==================== -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                
+                <!-- বক্স ১ -->
+                <div class="feature-card">
+                    <span class="card-number">/ 1</span>
+                    <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <h3>S.M.M. Solution</h3>
+                    <p>Social Media Marketing</p>
+                </div>
+
+                <!-- বক্স ২ (লাল রঙের অ্যাক্টিভ বক্স) -->
+                <div class="feature-card active-card">
+                    <span class="card-number">/ 2</span>
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>Connecting Brands to the Future of Digital Success.</p>
+                </div>
+
+                <!-- বক্স ৩ -->
+                <div class="feature-card">
+                    <span class="card-number">/ 3</span>
+                    <div class="icon"><i class="fa-solid fa-camera"></i></div>
+                    <h3>Content Creation</h3>
+                    <p>Crafting Strategies, Creating Stories, Delivering Results</p>
+                </div>
+
+                <!-- বক্স ৪ -->
+                <div class="feature-card">
+                    <span class="card-number">/ 4</span>
+                    <div class="icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>Brand Identity</h3>
+                    <p>Building a Powerful & Memorable Visual Brand.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT / STRATEGY SECTION ==================== -->
+    <section class="about-section">
+        <div class="container about-container">
+            
+            <!-- বাম দিকের ছবির অংশ -->
+            <div class="about-image">
+                <!-- এখানে আপনার গ্রাফিক্স/লোগো ইমেজটি বসাবেন। আপাতত একটি ডামি ডিজাইন দেওয়া হলো -->
+                <div class="dummy-graphic">
+                    <div class="circle-bg">
+                        <h1 style="color: #e50000; font-size: 80px; margin: 0; line-height: 1;">J</h1>
+                    </div>
+                    <div class="floating-text">
+                        <h3>DIGITAL</h3>
+                        <p>MARKETING</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ডান দিকের লেখার অংশ -->
+            <div class="about-content">
+                <span class="badge">JDM OVERVIEW</span>
+                <h2>Plan your business strategy with Our Experts</h2>
+                <p>Our main goal is to make an individual or an organization well-known in order to make it successful in their endeavors to achieve their business objectives. We want to promote ourselves as the best reliable digital marketing services company in the world by leveraging our expertise. Achieving customer satisfaction will be our only help in this journey.</p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="stat-text">
+                            <h4>15+</h4>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-text">
+                            <h4>500+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== CSS (নতুন সেকশনের ডিজাইন) ==================== -->
+    <style>
+        /* --- Features Section CSS --- */
+        .features-section {
+            position: relative;
+            z-index: 20;
+            margin-top: -60px; /* স্লাইডারের ওপর হালকা উঠে থাকার জন্য */
+            padding-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: #ffffff;
+            padding: 40px 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            position: relative;
+            transition: 0.3s;
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid #e50000;
+        }
+
+        .card-number {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: #d1d5db;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .feature-card .icon {
+            font-size: 35px;
+            color: #e50000;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        /* লাল রঙের অ্যাক্টিভ কার্ড */
+        .active-card {
+            background-color: #e50000;
+            color: #ffffff;
+        }
+        
+        .active-card .card-number,
+        .active-card .icon,
+        .active-card h3,
+        .active-card p {
+            color: #ffffff;
+        }
+
+        /* --- About Section CSS --- */
+        .about-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* বাম দিকের ডামি গ্রাফিক্সের স্টাইল */
+        .dummy-graphic {
+            position: relative;
+            width: 350px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-bg {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: #fffaf0; /* হালকা হলুদ ব্যাকগ্রাউন্ড */
+            border: 2px dashed #fcd34d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-text {
+            position: absolute;
+            bottom: 20px;
+            background: #ffffff;
+            padding: 15px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+            border-left: 5px solid #e50000;
+        }
+        
+        .floating-text h3 { color: #111827; margin-bottom: 2px; }
+        .floating-text p { color: #e50000; font-weight: 600; font-size: 14px; }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .badge {
+            background-color: #fee2e2;
+            color: #e50000;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            color: #111827;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #6b7280;
+            line-height: 1.8;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .stat-icon {
+            font-size: 30px;
+            color: #e50000;
+        }
+
+        .stat-text h4 {
+            font-size: 24px;
+            color: #111827;
+        }
+
+        .stat-text p {
+            font-size: 13px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        /* মোবাইল রেসপন্সিভ */
+        @media (max-width: 991px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-container { flex-direction: column; }
+        }
+        @media (max-width: 576px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .stats-container { flex-direction: column; gap: 20px; }
+        }
+    </style>
