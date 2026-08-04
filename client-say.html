@@ -6,29 +6,48 @@
     <title>Client Say - JDM Agency</title>
     
     <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: #f3f4f6; }
 
-        body {
-            background-color: #f3f4f6;
-        }
+        /* ================= HEADER CSS ================= */
+        .top-bar { background-color: #0B1120; color: #ffffff; padding: 10px 0; font-size: 13px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .top-left, .top-right { display: flex; align-items: center; gap: 20px; }
+        .info-item { display: flex; align-items: center; gap: 10px; line-height: 1.4; }
+        .info-item i { color: #e50000; font-size: 16px; }
+        .divider { width: 1px; height: 30px; background-color: rgba(255, 255, 255, 0.1); margin: 0 10px; }
+        .social-icons { display: flex; gap: 15px; }
+        .social-icons a { color: #ffffff; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        .social-icons a:hover { color: #e50000; }
+        .main-header { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); padding: 15px 0; }
+        .main-header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #000; }
+        .logo-text { font-size: 24px; font-weight: 700; color: #111827; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links li a { text-decoration: none; color: #111827; font-weight: 500; font-size: 15px; padding-bottom: 5px; transition: color 0.3s; }
+        .nav-links li a:hover { color: #e50000; }
+        .nav-links li a.active { color: #e50000; border-bottom: 2px solid #e50000; }
+        .header-actions { display: flex; align-items: center; gap: 20px; }
+        .btn-whatsapp { background-color: #e50000; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; transition: background 0.3s; }
+        .btn-whatsapp:hover { background-color: #cc0000; }
+        .hotline-box { display: flex; align-items: center; gap: 12px; }
+        .hotline-icon { background-color: #e50000; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px; }
+        .hotline-text { display: flex; flex-direction: column; }
+        .hotline-title { font-size: 12px; color: #6b7280; font-weight: 500; line-height: 1; margin-bottom: 4px; }
+        .hotline-number { font-size: 16px; font-weight: 700; color: #111827; line-height: 1; }
 
-        /* --- Header (এই অংশটি index.html এর মতোই) --- */
-        /* ... (আগের index.html এর Header CSS কোডগুলো এখানে বসবে) ... */
-
-        /* --- Page Banner --- */
+        /* ================= PAGE BANNER CSS ================= */
         .page-banner {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x400'); /* এখানে ব্যানারের অরিজিনাল ছবি বসবে */
+            background-color: #111; /* ছবির বদলে কালো ব্যাকগ্রাউন্ড দিলাম */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x400');
             background-size: cover;
             background-position: center;
             height: 300px;
@@ -39,133 +58,173 @@
             color: #fff;
             text-align: center;
         }
+        .page-banner h1 { font-size: 40px; margin-bottom: 10px; }
+        .page-banner p { font-size: 16px; }
+        .page-banner p a { color: #e50000; text-decoration: none; font-weight: 600;}
 
-        .page-banner h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
-
-        .page-banner p {
-            font-size: 16px;
-        }
-
-        .page-banner p a {
-            color: #e50000;
-            text-decoration: none;
-        }
-
-        /* --- Video Gallery Section --- */
-        .video-gallery {
-            padding: 60px 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Featured Video (Top Large Video) */
-        .featured-video {
-            margin-bottom: 40px;
-            width: 100%;
-        }
+        /* ================= VIDEO GALLERY CSS ================= */
+        .video-gallery { padding: 60px 0; }
+        .gallery-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .featured-video { margin-bottom: 40px; width: 100%; }
+        .featured-video iframe { width: 100%; height: 500px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: none; }
+        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .video-item { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .video-item:hover { transform: translateY(-5px); }
+        .video-item iframe { width: 100%; height: 250px; border: none; }
         
-        .featured-video iframe {
-            width: 100%;
-            height: 500px; /* ডেস্কটপের জন্য বড় সাইজ */
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* Grid Videos */
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .video-item {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .video-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .video-item iframe {
-            width: 100%;
-            height: 250px;
-            border: none;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-            .featured-video iframe {
-                height: 300px;
-            }
+            .video-grid { grid-template-columns: 1fr; }
+            .featured-video iframe { height: 300px; }
         }
+
+        /* ================= FOOTER CSS ================= */
+        .footer-section { background-color: #0B1120; color: #d1d5db; padding-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; max-width: 1400px; margin-left: auto; margin-right: auto; padding: 0 20px;}
+        .footer-logo { margin-bottom: 20px; display: flex; align-items: center; text-decoration: none; }
+        .footer-desc { line-height: 1.8; margin-bottom: 25px; font-size: 15px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: rgba(255,255,255,0.05); color: #ffffff; border-radius: 50%; text-decoration: none; transition: 0.3s; }
+        .footer-social a:hover { background-color: #e50000; }
+        .footer-col h3 { color: #ffffff; font-size: 20px; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
+        .footer-col h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #e50000; }
+        .footer-links, .footer-contact { list-style: none; }
+        .footer-links li, .footer-contact li { margin-bottom: 15px; }
+        .footer-links a { color: #d1d5db; text-decoration: none; transition: 0.3s; display: inline-block; }
+        .footer-links a:hover { color: #e50000; transform: translateX(5px); }
+        .footer-contact li { display: flex; gap: 15px; line-height: 1.6; }
+        .footer-contact i { color: #e50000; margin-top: 4px; }
+        .copyright-area { background-color: #060913; padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .copyright-area p { font-size: 14px; color: #9ca3af; }
+        @media (max-width: 991px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 576px) { .footer-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-    <!-- ==================== HEADER ==================== -->
-    <!-- (এখানে আগের index.html এর সম্পূর্ণ <header>...</header> কোডটি পেস্ট করবেন) -->
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-left">
+                    <div class="info-item"><i class="fa-solid fa-location-arrow"></i><span>H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span></div>
+                    <div class="divider"></div>
+                    <div class="info-item"><i class="fa-regular fa-envelope"></i><span>Hello@jolshiridigit<br>al.com</span></div>
+                </div>
+                <div class="top-right">
+                    <div class="info-item"><i class="fa-regular fa-clock"></i><span>Sat-Thu: 10.00am To 7.00pm</span></div>
+                    <div class="divider"></div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 5 C15 5, 10 25, 20 35 C30 25, 30 15, 30 15" stroke="#e50000" stroke-width="4" stroke-linecap="round"/>
+                        <circle cx="22" cy="22" r="6" fill="#e50000"/>
+                    </svg>
+                    <span class="logo-text">JDM Agency</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="client-say.html" class="active">Client Say</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Happy Client</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Workflow</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="#" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                    <div class="hotline-box">
+                        <div class="hotline-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="hotline-text"><span class="hotline-title">Hotline</span><span class="hotline-number">+88 01916-367602</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <!-- ==================== PAGE BANNER ==================== -->
+    <!-- ================= PAGE BANNER ================= -->
     <section class="page-banner">
         <h1>Client Say</h1>
         <p><a href="index.html">Home</a> / Client Say</p>
     </section>
 
-    <!-- ==================== VIDEO GALLERY ==================== -->
+    <!-- ================= VIDEO GALLERY ================= -->
     <section class="video-gallery">
-        <div class="container">
+        <div class="gallery-container">
             
-            <!-- Featured Video (বড় ভিডিওটি) -->
+            <!-- Featured Video -->
             <div class="featured-video">
-                <!-- YouTube এর Embed Code এখানে বসাবেন -->
                 <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="YouTube video player" allowfullscreen></iframe>
             </div>
 
-            <!-- Video Grid (ছোট ভিডিওগুলো) -->
+            <!-- Video Grid -->
             <div class="video-grid">
-                
-                <!-- Video 1 -->
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
-                </div>
-
-                <!-- Video 2 -->
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
-                </div>
-
-                <!-- Video 3 -->
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
-                </div>
-
-                <!-- Video 4 -->
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe>
-                </div>
-                
-                <!-- আরও ভিডিও লাগলে এই ব্লকটি কপি করে নিচে বসাবেন -->
-
+                <div class="video-item"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe></div>
+                <div class="video-item"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe></div>
+                <div class="video-item"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe></div>
+                <div class="video-item"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" allowfullscreen></iframe></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== FOOTER ==================== -->
-    <!-- (এখানে আগের index.html এর সম্পূর্ণ <footer>...</footer> কোডটি পেস্ট করবেন) -->
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-section">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="index.html" class="logo footer-logo">
+                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 5 C15 5, 10 25, 20 35 C30 25, 30 15, 30 15" stroke="#e50000" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                    <span style="color: #fff; font-size: 22px; font-weight: 700;">JDM Agency</span>
+                </a>
+                <p class="footer-desc">We are a leading digital marketing agency dedicated to helping businesses grow and succeed in the digital world.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Pricing Plan</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Digital Marketing</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">SEO Optimization</a></li>
+                    <li><a href="#">Content Creation</a></li>
+                    <li><a href="#">Social Media</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> H#5, Sector # 18, Uttara, Dhaka</li>
+                    <li><i class="fa-solid fa-phone"></i> +88 01916-367602</li>
+                    <li><i class="fa-solid fa-envelope"></i> Hello@jolshiridigital.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <p>&copy; 2024 JDM Agency. All Rights Reserved. Designed by JDM.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
