@@ -837,3 +837,190 @@
             .stats-container { flex-direction: column; gap: 20px; }
         }
     </style>
+<section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <span class="badge">OUR SERVICES</span>
+                <h2>What We Provide For Your<br>Best Business</h2>
+            </div>
+            
+            <div class="services-grid">
+                
+                <div class="service-box">
+                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Web Development</h3>
+                    <p>We build professional, responsive, and SEO-friendly websites tailored to your business needs.</p>
+                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>Social Media Marketing</h3>
+                    <p>Boost your brand presence and engage with your target audience across all social platforms.</p>
+                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-box">
+                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <h3>SEO Optimization</h3>
+                    <p>Rank higher on search engines, drive organic traffic, and increase your business revenue.</p>
+                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container cta-container">
+            <div class="cta-text">
+                <h2>Are you ready to grow your business?</h2>
+                <p>Let's work together to create a powerful digital presence and achieve your goals.</p>
+            </div>
+            <div class="cta-action">
+                <a href="#" class="btn-white">Contact Us Now <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* --- Services Section CSS --- */
+        .services-section {
+            padding: 80px 0;
+            background-color: #f9fafb; /* হালকা গ্রে ব্যাকগ্রাউন্ড */
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #111827;
+            margin-top: 10px;
+            line-height: 1.3;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-box {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(229,0,0,0.1); /* হোভার করলে লাল শ্যাডো */
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: #fee2e2;
+            color: #e50000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .service-box:hover .service-icon {
+            background-color: #e50000;
+            color: #ffffff;
+        }
+
+        .service-box h3 {
+            font-size: 22px;
+            color: #111827;
+            margin-bottom: 15px;
+        }
+
+        .service-box p {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            text-decoration: none;
+            color: #111827;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .service-link i {
+            color: #e50000;
+        }
+
+        .service-box:hover .service-link {
+            color: #e50000;
+        }
+
+        /* --- Call To Action CSS --- */
+        .cta-section {
+            background-color: #e50000; /* লাল ব্যাকগ্রাউন্ড */
+            padding: 60px 0;
+            background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots)"/></svg>');
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta-text h2 {
+            color: #ffffff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .cta-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #e50000;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-white:hover {
+            background-color: #111827;
+            color: #ffffff;
+        }
+
+        /* মোবাইল রেসপন্সিভ */
+        @media (max-width: 991px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-container { flex-direction: column; text-align: center; gap: 30px; }
+        }
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
