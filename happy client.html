@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDM Agency - Happy Client</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e52a2d',
+                            orange: '#f59e0b',
+                            dark: '#0d111d',
+                            darker: '#090b14',
+                            lightBg: '#f8f9fa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-lightBg text-gray-800 antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-arrow text-brand-red"></i>
+                <span>H#5, (Rajuk Project), Sector # 18, Uttara, Dhaka, Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-envelope text-brand-red"></i>
+                <span>Hello@jdmagency.com</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-regular fa-clock text-brand-red"></i>
+                <span>Sat-Thu: 10:00am To 7:00pm</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full border-2 border-brand-red flex items-center justify-center text-brand-red">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <span class="font-bold text-xl text-gray-900 tracking-tight">JDM Agency</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-gray-800">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-brand-red transition">Home</a>
+                <a href="client-say.html" class="text-gray-600 hover:text-brand-red transition">Client Say</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brand-red transition">Contact</a>
+                <a href="happy-client.html" class="text-brand-red border-b-2 border-brand-red pb-1">Happy Client</a>
+                <a href="#" class="text-gray-600 hover:text-brand-red transition">Services</a>
+                <a href="#" class="text-gray-600 hover:text-brand-red transition">Workflow</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red text-lg">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div class="flex flex-col text-sm">
+                        <span class="text-gray-500 text-xs font-semibold">Hotline</span>
+                        <span class="font-bold text-gray-900">+88 01916-367602</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header (Happy Client) -->
+    <div class="relative bg-brand-dark py-24 text-center">
+        <!-- Background Overlay (you can add a real background image here later) -->
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');"></div>
+        <div class="absolute inset-0 bg-brand-dark bg-opacity-90"></div>
+        
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Happy Client</h1>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-brand-red transition">Home</a>
+                <span>/</span>
+                <span class="text-brand-red">Happy Client</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Logos -->
+    <div class="bg-white py-12 border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80">
+            <!-- Replace these with actual partner logos later if needed -->
+            <img src="https://via.placeholder.com/100x100?text=Logo+1" alt="Partner Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+            <img src="https://via.placeholder.com/150x80?text=Logo+2" alt="Partner Logo" class="h-12 object-contain grayscale hover:grayscale-0 transition">
+            <img src="https://via.placeholder.com/120x100?text=Logo+3" alt="Partner Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+            <img src="https://via.placeholder.com/100x100?text=Logo+4" alt="Partner Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition">
+        </div>
+    </div>
+
+    <!-- Client Testimonials Header -->
+    <div class="bg-[#3b3a3a] py-16 text-center text-white">
+        <h2 class="text-brand-orange text-2xl md:text-3xl font-semibold tracking-wide uppercase mb-2">Client</h2>
+        <h3 class="text-4xl md:text-5xl font-bold tracking-wider">TESTIMONIALS</h3>
+    </div>
+
+    <!-- Testimonials Grid Section -->
+    <div class="flex flex-col md:flex-row w-full max-w-7xl mx-auto">
+        
+        <!-- Left Column (Peach Background) -->
+        <div class="w-full md:w-1/2 bg-[#f9eee7] p-8 md:p-16 flex flex-col gap-12">
+            
+            <!-- Client 1 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-1.png" alt="Dr. A Z M Farhad" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Dr. A Z M Farhad</h4>
+                        <p class="text-sm text-gray-600">Dr. Israt jahan hospital | Owner</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "I was looking for a trusted agency for marketing my company. Who can take all the responsibility of my company's marketing. Then I found the JDM agency. I got a lot more service than I needed from this company. My best wishes to the JDM agency."
+                </p>
+                <div class="w-full h-px bg-gray-300 mt-8"></div>
+            </div>
+
+            <!-- Client 3 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-3.png" alt="Dr. Saurav Sutar" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Dr. Saurav Sutar</h4>
+                        <p class="text-sm text-gray-600">Surgeon | SBMC</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "I have been receiving the services of JDM Agency for a long time. I like their professionalism and sincerity. I wish their agency lives for a thousand years."
+                </p>
+                <div class="w-full h-px bg-gray-300 mt-8"></div>
+            </div>
+
+            <!-- Client 5 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-5.png" alt="Md. Miraj Khan" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Md. Miraj Khan</h4>
+                        <p class="text-sm text-gray-600">Unicare Health | CEO</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "The JDM agency has made a significant contribution to the level we have reached today. Especially the CEO of the company is very sincere. I recommend everyone to take their services."
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Right Column (Light Grey Background) -->
+        <div class="w-full md:w-1/2 bg-[#f4f4f4] p-8 md:p-16 flex flex-col gap-12">
+            
+            <!-- Client 2 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-2.png" alt="Mahbub Masum" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Mahbub Masum</h4>
+                        <p class="text-sm text-gray-600">Visatrix | Owner</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "I like the professionalism of the JDM agency very much. I am doing my personal branding through them and look forward to continuing to work with them in the future. I received their immediate response to any need. They are the best company in client service."
+                </p>
+                <div class="w-full h-px bg-gray-300 mt-8"></div>
+            </div>
+
+            <!-- Client 4 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-4.png" alt="Dr. Saiful Islam" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Dr. Saiful Islam</h4>
+                        <p class="text-sm text-gray-600">Consultant | ENT</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "When I was thinking about my personal branding, I found JDM Agency. They are sincere and creative. I am satisfied with their work."
+                </p>
+                <div class="w-full h-px bg-gray-300 mt-8"></div>
+            </div>
+
+            <!-- Client 6 -->
+            <div>
+                <div class="flex items-center gap-4 mb-4">
+                    <img src="client-6.png" alt="Sanjida Salma Poly" class="w-16 h-16 rounded-full object-cover shadow-md border-2 border-white">
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900">Sanjida Salma Poly</h4>
+                        <p class="text-sm text-gray-600">Poli Shilpo Kutir | Owner</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-[15px] leading-relaxed">
+                    "Since marketing is a compulsory subject in business, my suggestion is JDM agency. The Creativity and sincerity of the JDM agency impressed me."
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Let's Get In Touch Footer -->
+    <footer class="bg-brand-darker pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-wider text-white mb-8">
+                <span class="text-brand-red">L</span>ET'S <span class="text-brand-orange">G</span>ET IN <span class="text-brand-red">T</span>OUCH
+            </h2>
+            <div class="w-full h-[1px] bg-brand-red opacity-50 mb-12"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-6">Contact</h3>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>+8801916-367602</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>Hello@jdmagency.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>Head Office # 14th Floor, House: 05, Sector: 18, Uttara, Dhaka, Bangladesh</span>
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <span class="text-white text-sm mr-3">Follow:</span>
+                    <div class="inline-flex gap-3 text-gray-400">
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-400">
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Company</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Service</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Pricing</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Support</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Careers</a></li>
+                    </ul>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>How It's Work</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Case Studies</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Press media</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Free Consultancy Form -->
+            <div>
+                <div class="border border-brand-red p-6 rounded bg-opacity-10 bg-brand-red">
+                    <h3 class="text-lg font-semibold text-white mb-2">For Free Consultancy</h3>
+                    <p class="text-xs text-gray-400 mb-4">Fields marked with an * are required</p>
+                    <form class="space-y-3 text-sm">
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Name</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Company Name</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Phone</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Location *</label>
+                            <select class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red appearance-none">
+                                <option>Select Location</option>
+                                <option>Dhaka</option>
+                                <option>Outside Dhaka</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-gray-200 text-gray-900 px-6 py-2 rounded text-sm font-semibold hover:bg-white transition mt-2">Submit</button>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Copyright Bottom -->
+        <div class="border-t border-gray-800 py-6 text-center text-sm text-gray-500 bg-[#090b14]">
+            Copyright © 2026 | JDM Agency
+        </div>
+    </footer>
+
+</body>
+</html>
