@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JDM Agency - Happy Client</title>
@@ -35,6 +36,35 @@
             }
         }
     </script>
+    <style>
+    /* Logo Slider CSS */
+    .client-logo-section {
+        padding: 60px 0;
+        background: #ffffff;
+        overflow: hidden;
+    }
+    .logo-swiper {
+        width: 100%;
+    }
+    .logo-swiper .swiper-wrapper {
+        transition-timing-function: linear !important;
+    }
+    .logo-swiper .swiper-slide {
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo-swiper .swiper-slide img {
+        max-width: 100%;
+        max-height: 90px;
+        object-fit: contain;
+        cursor: grab;
+    }
+    .logo-swiper .swiper-slide img:active {
+        cursor: grabbing;
+    }
+</style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased">
 
@@ -121,7 +151,14 @@
             </div>
         </div>
     </div>
-
+<!-- Client Logo Slider Section -->
+<section class="client-logo-section">
+    <div class="swiper logo-swiper">
+        <div class="swiper-wrapper" id="logo-container">
+            <!-- JS diye ekhane C1 theke C52 logo auto chole asbe -->
+        </div>
+    </div>
+</section>
     <!-- Single Testimonial Image Section -->
     <div class="bg-[#fdf9f6] py-16 px-4">
         <div class="max-w-5xl mx-auto flex justify-center">
@@ -228,6 +265,33 @@
             Copyright © 2026 | JDM Agency
         </div>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    // 52 ta logo auto generate korar script
+    const logoContainer = document.getElementById('logo-container');
+    let logoHtml = '';
+    for(let i = 1; i <= 52; i++) {
+        logoHtml += `<div class="swiper-slide"><img src="C${i}.png" alt="JDM Agency Client ${i}"></div>`; 
+    }
+    logoContainer.innerHTML = logoHtml;
 
+    // Swiper Animation Initialization
+    var swiper = new Swiper('.logo-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 40,
+        loop: true,
+        speed: 3000, 
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        grabCursor: true,
+        breakpoints: {
+            320: { slidesPerView: 3, spaceBetween: 20 },
+            768: { slidesPerView: 5, spaceBetween: 30 },
+            1024: { slidesPerView: 7, spaceBetween: 40 },
+        }
+    });
+</script>
 </body>
 </html>
