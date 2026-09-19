@@ -8,7 +8,7 @@
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,12 +21,11 @@
                 extend: {
                     fontFamily: {
                         sans: ['Poppins', 'sans-serif'],
-                        handwriting: ['Comic Sans MS', 'cursive', 'sans-serif'], // For the badge fonts
                     },
                     colors: {
                         brand: {
                             red: '#e52a2d',
-                            orange: '#f59e0b',
+                            orange: '#f9a826',
                             dark: '#0d111d',
                             darker: '#090b14',
                             lightBg: '#f8f9fa'
@@ -37,30 +36,40 @@
         }
     </script>
     <style>
-        body { font-family: 'Poppins', sans-serif; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #090b14; }
         ::-webkit-scrollbar-thumb { background: #e52a2d; border-radius: 4px; }
         
-        /* Subtle geometric background pattern for Choose One section */
-        .bg-pattern {
-            background-color: #1f1f1f;
-            background-image: 
-                linear-gradient(30deg, #242424 12%, transparent 12.5%, transparent 87%, #242424 87.5%, #242424),
-                linear-gradient(150deg, #242424 12%, transparent 12.5%, transparent 87%, #242424 87.5%, #242424),
-                linear-gradient(30deg, #242424 12%, transparent 12.5%, transparent 87%, #242424 87.5%, #242424),
-                linear-gradient(150deg, #242424 12%, transparent 12.5%, transparent 87%, #242424 87.5%, #242424),
-                linear-gradient(60deg, #2a2a2a 25%, transparent 25.5%, transparent 75%, #2a2a2a 75%, #2a2a2a),
-                linear-gradient(60deg, #2a2a2a 25%, transparent 25.5%, transparent 75%, #2a2a2a 75%, #2a2a2a);
-            background-size: 80px 140px;
-            background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+        /* 3D Cube Pattern Background */
+        .bg-cube-pattern {
+            background-color: #1a1a1a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 22.5 0 30l15 7.5zM15 22.5V7.5L30 0v15zM30 30V45l15 7.5V37.5zM45 22.5V7.5L60 0v15zM60 30L45 22.5 30 30l15 7.5zM45 52.5v-15l15-7.5v15zM30 30l-15 7.5v15L30 45zM0 30v15l15 7.5v-15zM15 52.5v-15l-15-7.5v15zM30 0L15 7.5 0 0l15-7.5zM45 0l15 7.5L45 15 30 7.5zM60 0L45-7.5 30 0l15 7.5zM45 30l15 7.5v15L45 45zM30 30L15 37.5v15L30 45zM15 30L0 37.5v15L15 45z' fill='%232a2a2a' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Card Custom Borders (Left and Right white lines) */
+        .card-inner-lines {
+            position: absolute;
+            top: 25px;
+            bottom: 25px;
+            left: 20px;
+            right: 20px;
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            pointer-events: none; /* Prevents border from blocking clicks */
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(45, 10, 10, 0.85), rgba(45, 10, 10, 0.85)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
         }
     </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased">
 
-    <!-- Top Bar -->
-    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-gray-800">
+    <!-- Top Contact Bar -->
+    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-gray-800 relative z-50">
         <div class="flex items-center gap-6">
             <div class="flex items-center gap-2">
                 <i class="fa-solid fa-location-arrow text-brand-red"></i>
@@ -68,7 +77,7 @@
             </div>
             <div class="flex items-center gap-2">
                 <i class="fa-regular fa-envelope text-brand-red"></i>
-                <span>Hello@jdmagency.com</span>
+                <span>Hello@jolshiridigital.com</span>
             </div>
         </div>
         <div class="flex items-center gap-6">
@@ -77,23 +86,21 @@
                 <span>Sat-Thu: 10:00am To 7:00pm</span>
             </div>
             <div class="flex items-center gap-3">
-                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
-                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/jdmagencybd" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@jdm.agency" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/jdmagency/" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Menu -->
     <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
             <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full border-2 border-brand-red flex items-center justify-center text-brand-red">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <span class="font-bold text-xl text-gray-900 tracking-tight">JDM Agency</span>
-            </a>
+            <a href="index.html" class="flex items-center">
+    <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-16 w-auto object-contain -ml-3">
+    <span class="font-extrabold text-[22px] md:text-2xl text-gray-900 tracking-tight -ml-7 relative z-10">JDM Agency</span>
+</a>
 
             <!-- Mobile Menu Button -->
             <button class="md:hidden text-2xl text-gray-800">
@@ -112,7 +119,7 @@
 
             <!-- Right Actions -->
             <div class="hidden md:flex items-center gap-4">
-                <a href="#" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg">
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
                 </a>
                 <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
@@ -128,229 +135,192 @@
         </div>
     </nav>
 
-    <!-- Page Header (Workflow) -->
-    <div class="relative bg-brand-dark py-24 text-center overflow-hidden">
-        <!-- Background Overlay -->
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
-        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
-        
-        <div class="relative z-10 flex flex-col items-center">
-            <!-- Decorative Red Circle behind text -->
-            <div class="absolute w-16 h-16 bg-brand-red rounded-full -z-10 left-[-5px] top-[-5px] opacity-80 blur-[4px]"></div>
-            
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Workflow</h1>
-            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
-                <a href="index.html" class="hover:text-brand-red transition">Home</a>
-                <span>/</span>
-                <span class="text-brand-red">Workflow</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section 1: Choose One -->
-    <section class="bg-pattern py-24 border-b-4 border-black">
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
-            <h2 class="text-brand-orange text-2xl font-bold mb-20 tracking-wider">Choose One</h2>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-24">
-                
-                <!-- Button 1: Video -->
-                <div class="relative group cursor-pointer">
-                    <!-- Top floating text -->
-                    <div class="absolute -top-10 w-full text-center z-20">
-                        <span class="text-brand-red font-bold text-2xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]" style="font-family: 'Comic Sans MS', cursive;">Video?</span>
-                    </div>
-                    
-                    <!-- Circle base -->
-                    <div class="w-48 h-48 rounded-full bg-[#d1d5db] border-4 border-gray-400 flex flex-col items-center justify-center shadow-[inset_0_-10px_20px_rgba(0,0,0,0.2),0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
-                        <!-- Diagonal highlight to give 3D spherical effect -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white to-transparent opacity-40"></div>
-                        
-                        <!-- Video Camera Icon -->
-                        <i class="fa-solid fa-video text-6xl text-brand-red drop-shadow-md z-10"></i>
-                        <div class="mt-2 text-brand-red text-xs font-bold tracking-widest z-10">
-                            <i class="fa-solid fa-film"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom Badge -->
-                    <div class="absolute -bottom-6 w-full flex justify-center z-20">
-                        <div class="bg-brand-red text-white text-sm font-black px-6 py-2 rounded shadow-lg border border-red-400 flex items-center gap-2 tracking-wider group-hover:bg-red-600 transition-colors">
-                            CLICK HERE
-                            <i class="fa-solid fa-hand-pointer text-xl animate-bounce" style="transform: rotate(-15deg);"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Button 2: Creative -->
-                <div class="relative group cursor-pointer">
-                    <!-- Top floating text -->
-                    <div class="absolute -top-12 w-full text-center z-20">
-                        <span class="text-yellow-400 font-bold text-2xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]" style="font-family: 'Comic Sans MS', cursive;">Creative<br><span class="text-sm text-white">Design</span></span>
-                    </div>
-                    
-                    <!-- Circle base -->
-                    <div class="w-48 h-48 rounded-full bg-[#374151] border-4 border-gray-500 flex flex-col items-center justify-center shadow-[inset_0_-10px_20px_rgba(0,0,0,0.4),0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
-                        <!-- Diagonal highlight to give 3D spherical effect -->
-                        <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white to-transparent opacity-10"></div>
-                        
-                        <!-- Creative Icons (Desktop + Brush) -->
-                        <div class="relative z-10 text-center">
-                            <i class="fa-solid fa-desktop text-6xl text-white drop-shadow-md"></i>
-                            <i class="fa-solid fa-paint-brush absolute -right-2 -bottom-2 text-3xl text-brand-orange drop-shadow-md" style="transform: rotate(-20deg);"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Bottom Badge -->
-                    <div class="absolute -bottom-6 w-full flex justify-center z-20">
-                        <div class="bg-black text-white text-sm font-black px-6 py-2 rounded shadow-lg border border-gray-700 flex items-center gap-2 tracking-wider group-hover:bg-gray-900 transition-colors">
-                            Click here!
-                            <i class="fa-solid fa-mouse-pointer text-brand-orange animate-pulse"></i>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- Hero Banner (Workflow) -->
+    <section class="hero-bg py-20 md:py-28 text-center relative z-10 border-b-8 border-brand-red">
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">
+            <span class="text-brand-red font-black">W</span>orkflow
+        </h1>
+        <div class="text-gray-300 text-sm font-medium">
+            <a href="index.html" class="hover:text-brand-red transition">Home</a> 
+            <span class="mx-2">/</span> 
+            <span class="text-white">Workflow</span>
         </div>
     </section>
 
-    <!-- Section 2: VIDEO Grid -->
-    <section class="bg-black py-24">
-        <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-center text-brand-orange text-2xl font-bold mb-16 tracking-wider">VIDEO</h2>
+    <!-- Choose One Section -->
+    <section class="bg-cube-pattern py-20 min-h-[40vh] flex flex-col justify-center border-b-[10px] border-black">
+        <h2 class="text-brand-orange text-3xl md:text-4xl font-extrabold text-center mb-16 tracking-wide">
+            Choose One
+        </h2>
+
+        <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-center items-center gap-16 md:gap-32 w-full px-4">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- 1. YOUTUBE CHANNEL LINK -->
+            <a href="https://www.youtube.com/@jdm.agency" target="_blank" class="flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <h3 class="text-brand-red text-2xl font-bold mb-4 tracking-wider">Video?</h3>
                 
-                <!-- Grid Box 1 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <!-- Brackets Wrapper -->
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Clinic &</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Hospital</h3>
+                <!-- Circle Icon -->
+                <div class="relative w-48 h-48 rounded-full bg-gray-100 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)] border-4 border-gray-300 group-hover:shadow-[0_0_35px_rgba(229,42,45,0.5)] transition-shadow">
+                    <div class="text-center">
+                        <i class="fa-solid fa-video text-brand-red text-5xl"></i>
+                        <div class="mt-2 text-brand-red text-xs"><i class="fa-solid fa-film"></i></div>
                     </div>
-                    <!-- Red Dot Accent -->
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
                 </div>
 
-                <!-- Grid Box 2 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Promo</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Video</h3>
+                <!-- Button -->
+                <div class="bg-brand-red text-white font-bold py-2 px-6 rounded-md mt-[-20px] z-10 flex items-center gap-2 shadow-lg group-hover:bg-red-700 transition-colors">
+                    CLICK HERE <i class="fa-solid fa-hand-pointer text-sm"></i>
+                </div>
+            </a>
+
+            <!-- 2. BEHANCE PROFILE LINK -->
+            <a href="https://www.behance.net/jdmagency" target="_blank" class="flex flex-col items-center group cursor-pointer hover:-translate-y-2 transition-transform duration-300">
+                <div class="text-center mb-4">
+                    <h3 class="text-brand-orange text-2xl font-bold tracking-wider leading-tight">Creative</h3>
+                    <span class="text-white text-sm font-semibold">Design</span>
+                </div>
+                
+                <!-- Circle Icon -->
+                <div class="relative w-48 h-48 rounded-full bg-[#3b414f] flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.8)] border-4 border-gray-400 group-hover:shadow-[0_0_35px_rgba(249,168,38,0.4)] transition-shadow">
+                    <div class="relative text-center">
+                        <i class="fa-solid fa-desktop text-white text-5xl"></i>
+                        <i class="fa-solid fa-paint-brush text-brand-orange text-xl absolute -bottom-1 -right-3 drop-shadow-md"></i>
                     </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
                 </div>
 
-                <!-- Grid Box 3 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Doctor</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Promo</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
+                <!-- Button -->
+                <div class="bg-black border border-gray-700 text-white font-bold py-2 px-6 rounded-md mt-[-20px] z-10 flex items-center gap-2 shadow-lg group-hover:bg-gray-900 transition-colors">
+                    Click here! <i class="fa-solid fa-arrow-pointer text-brand-orange text-sm"></i>
                 </div>
+            </a>
 
-                <!-- Grid Box 4 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Program</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Promo</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 5 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">School &</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">College</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 6 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Tour &</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Picnic</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 7 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Cafe &</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Restaurant</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 8 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Event</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Management</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 9 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Real</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Estate</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 10 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">TV</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Programme</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 11 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Short</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Films</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-                <!-- Grid Box 12 -->
-                <div class="bg-[#262626] h-32 relative group cursor-pointer hover:bg-[#2d2d2d] transition-colors duration-300">
-                    <div class="absolute inset-y-6 left-10 right-10 border-l border-r border-white flex flex-col justify-center items-center text-center">
-                        <p class="text-white text-[10px] tracking-widest uppercase mb-1">Parlor &</p>
-                        <h3 class="text-brand-orange text-xl font-bold uppercase tracking-wide group-hover:scale-105 transition-transform">Beauty</h3>
-                    </div>
-                    <div class="absolute bottom-4 right-4 w-1.5 h-1.5 bg-brand-red"></div>
-                </div>
-
-            </div>
         </div>
     </section>
 
-    <!-- Let's Get In Touch Pre-Footer Banner -->
-    <section class="bg-brand-darker py-20 border-b border-gray-800">
+    <!-- Video Categories Grid Section -->
+    <section class="bg-black py-20 relative z-20">
+        <h2 class="text-brand-orange text-2xl md:text-3xl font-extrabold text-center mb-16 tracking-[0.2em] uppercase">
+            VIDEO
+        </h2>
+
+        <!-- Grid Container -->
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- 1. HEALTH & HOSPITAL -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-on6u-Ipt7PZPr8YsJg6fKp" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Health &</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Hospital</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 2. PROMO VIDEO -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-qZsbTeOJXoKzI_PLHTtW82" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Promo</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Video</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 3. DOCTOR PROMO -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-qZp0X1hSTqKsXnZsoyZw1j" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Doctor</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Promo</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 4. INFOGRAPH PROMO -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-rN8xDWdPd65pSzv5vcz0xQ" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Infograph</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Promo</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 5. SCHOOL & COLLEGE -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-oAT48r75lE4ZJEaeAZPaoD" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">School &</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">College</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 6. TOUR & PICNIC -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-p5-32ZIyiNPMUD0AkXQ35v" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Tour &</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Picnic</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 7. CAFE & RESTAURANT -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-rEItn80uENHH9U-cCifxPH" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Cafe &</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Restaurant</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 8. EVENT MANAGEMENT -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-oYvtyBjpWe78GCa6dVWtsd" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Event</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Management</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 9. REAL ESTATE -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-qqe2aAuj1qe3-Mc2kYAtFf" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Real</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Estate</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 10. TV PROGRAMME -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-rXjwE5QcBMp7YbcNqgGerS" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">TV</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Programme</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 11. SHORT FILMS -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-qe3WzYTnh7_GUR_3n4Oh_K" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Short</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Films</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+            <!-- 12. PARLOR & BEAUTY -->
+            <a href="https://www.youtube.com/playlist?list=PLU8n26tBys-oSzA0_1lYbCMSuzWYNu9Q1" target="_blank" class="bg-[#222222] h-40 relative flex flex-col items-center justify-center group hover:bg-[#2d2d2d] transition-colors duration-300">
+                <div class="card-inner-lines"></div>
+                <span class="text-gray-300 text-xs font-medium tracking-[0.2em] mb-1 z-10 uppercase">Parlor &</span>
+                <h3 class="text-brand-orange text-xl font-bold tracking-widest z-10 uppercase">Beauty</h3>
+                <div class="absolute bottom-3 right-3 w-1.5 h-1.5 bg-brand-red"></div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Let's Get In Touch Title -->
+    <section class="bg-brand-darker pt-20 border-t-2 border-gray-900">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight uppercase">
                 <span class="text-brand-red">LET'S</span> 
                 <span class="text-brand-orange">GET IN</span> 
                 <span class="text-brand-red">T</span><span class="text-brand-orange">O</span><span class="text-brand-red">UCH</span>
             </h2>
-            <div class="mt-8 max-w-4xl mx-auto h-[1px] bg-brand-red/30 relative">
+            <div class="mt-8 max-w-4xl mx-auto h-[1px] bg-brand-red/30 relative mb-4">
                 <div class="absolute left-0 top-0 h-[1px] w-1/4 bg-brand-red"></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-brand-dark pt-16 pb-8">
+    <!-- Footer -->
+    <footer class="bg-brand-dark pb-8 pt-10">
         <div class="max-w-7xl mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
                 
@@ -358,15 +328,15 @@
                 <div>
                     <h3 class="text-white text-xl font-bold mb-6">Contact</h3>
                     <ul class="space-y-4 text-sm text-gray-400">
-                        <li class="flex items-start gap-3">
+                        <li class="flex items-start gap-3 hover:text-brand-red transition cursor-pointer">
                             <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
                             <span>+8801916-367602</span>
                         </li>
-                        <li class="flex items-start gap-3">
+                        <li class="flex items-start gap-3 hover:text-brand-red transition cursor-pointer">
                             <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
-                            <span>Hello@jdmagency.com</span>
+                            <span>Hello@jolshiridigital.com</span>
                         </li>
-                        <li class="flex items-start gap-3">
+                        <li class="flex items-start gap-3 hover:text-brand-red transition cursor-pointer">
                             <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
                             <span>Head Office # 14th Floor, House: 05, Sector: 18, Uttara, Dhaka, Bangladesh</span>
                         </li>
@@ -380,8 +350,6 @@
                             <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-instagram"></i></a>
                             <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-twitter"></i></a>
                             <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
-                            <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-tiktok"></i></a>
-                            <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-pinterest-p"></i></a>
                         </div>
                     </div>
                 </div>
@@ -396,28 +364,10 @@
                             <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Company
                         </a>
                         <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> How It's Work
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
                             <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Service
                         </a>
                         <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Case Studies
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
                             <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Pricing
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Privacy Policy
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Support
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Press media
-                        </a>
-                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
-                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Careers
                         </a>
                         <a href="contact.html" class="flex items-center gap-2 hover:text-white transition">
                             <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Contact
@@ -427,7 +377,7 @@
 
                 <!-- Column 3: Consultancy Form -->
                 <div>
-                    <div class="border border-brand-red p-6 rounded bg-brand-darker relative">
+                    <div class="border border-brand-red p-6 rounded bg-brand-darker">
                         <h3 class="text-white text-xl font-bold mb-1">For Free Consultancy</h3>
                         <p class="text-xs text-gray-500 mb-6">Fields marked with an <span class="text-brand-red">*</span> are required</p>
                         
@@ -437,20 +387,8 @@
                                 <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
                             </div>
                             <div>
-                                <label class="block text-xs font-medium text-white mb-1">Company Name</label>
-                                <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm">
-                            </div>
-                            <div>
                                 <label class="block text-xs font-medium text-white mb-1">Phone <span class="text-brand-red">*</span></label>
                                 <input type="tel" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
-                            </div>
-                            <div>
-                                <label class="block text-xs font-medium text-white mb-1">Location <span class="text-brand-red">*</span></label>
-                                <select class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition appearance-none rounded-sm" required>
-                                    <option value="" disabled selected>Select location</option>
-                                    <option value="dhaka">Dhaka, Bangladesh</option>
-                                    <option value="other">Other</option>
-                                </select>
                             </div>
                             <button type="button" class="bg-gray-300 hover:bg-white transition text-black font-semibold text-xs py-2 px-6 rounded-sm mt-2">
                                 Submit
