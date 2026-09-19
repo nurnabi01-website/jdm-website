@@ -3,1310 +3,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JDM Agency Header</title>
+    <title>JDM Agency - Home</title>
     
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e52a2d',
+                            orange: '#f59e0b',
+                            dark: '#0d111d',
+                            darker: '#090b14',
+                            lightBg: '#f8f9fa',
+                            navy: '#0f172a',
+                            yellow: '#facc15'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        /* বেসিক রিসেট */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #f3f4f6; /* বডি ব্যাকগ্রাউন্ড (বোঝার সুবিধার্থে) */
-        }
-
-        /* --- টপ বার ডিজাইন --- */
-        .top-bar {
-            background-color: #0B1120; /* গাঢ় নীল ব্যাকগ্রাউন্ড */
-            color: #ffffff;
-            padding: 10px 0;
-            font-size: 13px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-left, .top-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            line-height: 1.4;
-        }
-
-        .info-item i {
-            color: #e50000; /* লাল আইকন */
-            font-size: 16px;
-        }
-
-        .divider {
-            width: 1px;
-            height: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin: 0 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #e50000;
-        }
-
-        /* --- মেইন নেভিগেশন ডিজাইন --- */
-        .main-header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            padding: 15px 0;
-        }
-
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* লোগো সেকশন */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #000;
-        }
-
-        .logo img {
-            height: 40px; /* এখানে আপনার অরিজিনাল লোগোর ছবি বসাবেন */
-        }
-
-        .logo-text {
-            font-size: 24px;
-            font-weight: 700;
-            color: #111827;
-        }
-
-        /* নেভিগেশন লিংক */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: #111827;
-            font-weight: 500;
-            font-size: 15px;
-            padding-bottom: 5px;
-            transition: color 0.3s;
-        }
-
-        .nav-links li a:hover {
-            color: #e50000;
-        }
-
-        .nav-links li a.active {
-            color: #e50000;
-            border-bottom: 2px solid #e50000; /* অ্যাক্টিভ মেনুর লাল দাগ */
-        }
-
-        /* অ্যাকশন বাটন সেকশন */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .btn-whatsapp {
-            background-color: #e50000;
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.3s;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #cc0000;
-        }
-
-        .hotline-box {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .hotline-icon {
-            background-color: #e50000;
-            color: #ffffff;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-        }
-
-        .hotline-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hotline-title {
-            font-size: 12px;
-            color: #6b7280;
-            font-weight: 500;
-            line-height: 1;
-            margin-bottom: 4px;
-        }
-
-        .hotline-number {
-            font-size: 16px;
-            font-weight: 700;
-            color: #111827;
-            line-height: 1;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090b14; }
+        ::-webkit-scrollbar-thumb { background: #e52a2d; border-radius: 4px; }
+        
+        /* Dot Pattern Background */
+        .dot-pattern {
+            background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
+            background-size: 16px 16px;
         }
     </style>
 </head>
-<body>
+<body class="bg-brand-lightBg text-gray-800 antialiased overflow-x-hidden">
 
-    <header>
-        <!-- টপ বার -->
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-left">
-                    <div class="info-item">
-                        <i class="fa-solid fa-location-arrow"></i>
-                        <span>H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="info-item">
-                        <i class="fa-regular fa-envelope"></i>
-                        <span>Hello@jolshiridigit<br>al.com</span>
-                    </div>
-                </div>
-                
-                <div class="top-right">
-                    <div class="info-item">
-                        <i class="fa-regular fa-clock"></i>
-                        <span>Sat-Thu: 10.00am To 7.00pm</span>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
+    <!-- Top Bar -->
+    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-arrow text-brand-red"></i>
+                <span>H#5, (Rajuk Project), Sector # 18, Uttara, Dhaka, Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-envelope text-brand-red"></i>
+                <span>Hello@jdmagency.com</span>
             </div>
         </div>
-
-        <!-- মেইন হেডার -->
-        <div class="main-header">
-            <div class="container">
-                
-                <!-- লোগো -->
-                <a href="#" class="logo">
-                    <!-- অরিজিনাল লোগোর ছবি বসানোর জায়গা। আপাতত আইকন দিয়েছি -->
-                    <svg width="35" height="35" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 5 C15 5, 10 25, 20 35 C30 25, 30 15, 30 15" stroke="#e50000" stroke-width="4" stroke-linecap="round"/>
-                        <circle cx="22" cy="22" r="6" fill="#e50000"/>
-                    </svg>
-                    <span class="logo-text">JDM Agency</span>
-                </a>
-
-                <!-- মেনু -->
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="client-say.html">Client Say</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                    <li><a href="happy-client.html">Happy Client</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="workflow.html">Workflow</a></li>
-                </ul>
-
-                <!-- বাটন ও হটলাইন -->
-                <div class="header-actions">
-                    <a href="#" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                    </a>
-                    
-                    <div class="hotline-box">
-                        <div class="hotline-icon">
-                            <i class="fa-solid fa-phone-volume"></i>
-                        </div>
-                        <div class="hotline-text">
-                            <span class="hotline-title">Hotline</span>
-                            <span class="hotline-number">+88 01916-367602</span>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-regular fa-clock text-brand-red"></i>
+                <span>Sat-Thu: 10:00am To 7:00pm</span>
             </div>
-        </div>
-    </header>
-
-</body>
-</html>
-<!-- ==================== PRELOADER (লোডিং অ্যানিমেশন) ==================== -->
-    <div id="preloader">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <h2 class="loader-logo">JDM Agency</h2>
-            <p class="loader-text">L O A D I N G</p>
+            <div class="flex items-center gap-3">
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
 
-    <!-- ==================== HERO SLIDER (মেইন ব্যানার) ==================== -->
-    <section class="hero-section">
-        <div class="slider-container">
-            
-            <!-- স্লাইড ১ -->
-            <div class="slide active">
-                <div class="slide-content">
-                    <p class="subtitle">Welcome to JDM Agency</p>
-                    <h1 class="title">Affordable All Digital <br><span class="highlight">Marketing Solutions</span></h1>
-                    <a href="#" class="btn-primary">Read more</a>
+    <!-- Navigation Bar -->
+    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full border-2 border-brand-red flex items-center justify-center text-brand-red">
+                    <i class="fa-solid fa-bolt"></i>
                 </div>
+                <span class="font-bold text-xl text-gray-900 tracking-tight">JDM Agency</span>
+            </a>
+
+            <button class="md:hidden text-2xl text-gray-800">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+                <a href="index.html" class="text-brand-red border-b-2 border-brand-red pb-1">Home</a>
+                <a href="client-say.html" class="text-gray-600 hover:text-brand-red transition">Client Say</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brand-red transition">Contact</a>
+                <a href="happy-client.html" class="text-gray-600 hover:text-brand-red transition">Happy Client</a>
+                <a href="services.html" class="text-gray-600 hover:text-brand-red transition">Services</a>
+                <a href="workflow.html" class="text-gray-600 hover:text-brand-red transition">Workflow</a>
             </div>
 
-            <!-- স্লাইড ২ -->
-            <div class="slide">
-                <div class="slide-content">
-                    <p class="subtitle">We're 100% Trusted Agency</p>
-                    <h1 class="title">Digital Strategies <br>that <span class="highlight">Connect the World.</span></h1>
-                    <a href="#" class="btn-primary">Get Started</a>
-                </div>
-            </div>
-
-            <!-- স্লাইড ৩ -->
-            <div class="slide">
-                <div class="slide-content">
-                    <p class="subtitle">15 years' Experience</p>
-                    <h1 class="title">Bridging Creativity & <br>for Tangible <span class="highlight">Impact</span></h1>
-                    <a href="#" class="btn-primary">Get Started</a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- স্লাইডার কন্ট্রোল (ডান/বাম বাটন) -->
-        <button class="slider-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-angle-left"></i></button>
-        <button class="slider-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-angle-right"></i></button>
-        
-        <!-- স্লাইডার ডট -->
-        <div class="slider-dots">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-    </section>
-
-    <!-- ==================== CSS (ডিজাইন ও অ্যানিমেশন) ==================== -->
-    <style>
-        /* --- Preloader CSS --- */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-        }
-
-        .loader-content {
-            text-align: center;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #e50000;
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            animation: spin 1s linear infinite;
-        }
-
-        .loader-logo {
-            font-size: 24px;
-            color: #111;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
-        }
-
-        .loader-text {
-            font-size: 12px;
-            color: #666;
-            letter-spacing: 4px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* --- Hero Slider CSS --- */
-        .hero-section {
-            position: relative;
-            background-color: #0f1115; /* কালো ব্যাকগ্রাউন্ড */
-            height: 80vh;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .slider-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            display: flex;
-            align-items: center;
-            padding-left: 10%;
-        }
-
-        .slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-
-        .slide-content {
-            transform: translateY(30px);
-            opacity: 0;
-            transition: all 0.8s ease-in-out 0.3s;
-        }
-
-        .slide.active .slide-content {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .subtitle {
-            color: #ffffff;
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        .title {
-            color: #ffffff;
-            font-size: 55px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 30px;
-        }
-
-        .highlight {
-            color: #e50000; /* লাল টেক্সট */
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: #e50000;
-            color: #ffffff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #cc0000;
-        }
-
-        /* স্লাইডার বাটন ও ডট */
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            border: 2px solid #ffffff;
-            color: #ffffff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 10;
-            transition: 0.3s;
-        }
-
-        .slider-btn:hover {
-            background-color: #e50000;
-            border-color: #e50000;
-        }
-
-        .prev-btn { left: 3%; }
-        .next-btn { right: 3%; }
-
-        .slider-dots {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 10px;
-            height: 10px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .dot.active {
-            background-color: #e50000;
-            border-color: #e50000;
-        }
-    </style>
-
-    <!-- ==================== JavaScript (অ্যানিমেশন কাজ করার জন্য) ==================== -->
-    <script>
-        // ১. লোডিং অ্যানিমেশন সরানোর কোড
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                preloader.style.visibility = 'hidden';
-            }, 1000); // ১ সেকেন্ড পর লোডিং চলে যাবে
-        });
-
-        // ২. স্লাইডার চেঞ্জ করার কোড
-        let currentSlideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-        }
-
-        function nextSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-            showSlide(currentSlideIndex);
-        }
-
-        function prevSlide() {
-            currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-            showSlide(currentSlideIndex);
-        }
-
-        function currentSlide(index) {
-            currentSlideIndex = index;
-            showSlide(currentSlideIndex);
-        }
-
-        // প্রতি ৫ সেকেন্ড পর পর অটোমেটিক স্লাইড চেঞ্জ হবে
-        setInterval(nextSlide, 5000);
-    </script>
-<!-- ==================== FEATURE CARDS (৪টি বক্স) ==================== -->
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                
-                <!-- বক্স ১ -->
-                <div class="feature-card">
-                    <span class="card-number">/ 1</span>
-                    <div class="icon"><i class="fa-brands fa-facebook-f"></i></div>
-                    <h3>S.M.M. Solution</h3>
-                    <p>Social Media Marketing</p>
-                </div>
-
-                <!-- বক্স ২ (লাল রঙের অ্যাক্টিভ বক্স) -->
-                <div class="feature-card active-card">
-                    <span class="card-number">/ 2</span>
-                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>Digital Marketing</h3>
-                    <p>Connecting Brands to the Future of Digital Success.</p>
-                </div>
-
-                <!-- বক্স ৩ -->
-                <div class="feature-card">
-                    <span class="card-number">/ 3</span>
-                    <div class="icon"><i class="fa-solid fa-camera"></i></div>
-                    <h3>Content Creation</h3>
-                    <p>Crafting Strategies, Creating Stories, Delivering Results</p>
-                </div>
-
-                <!-- বক্স ৪ -->
-                <div class="feature-card">
-                    <span class="card-number">/ 4</span>
-                    <div class="icon"><i class="fa-solid fa-award"></i></div>
-                    <h3>Brand Identity</h3>
-                    <p>Building a Powerful & Memorable Visual Brand.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== ABOUT / STRATEGY SECTION ==================== -->
-    <section class="about-section">
-        <div class="container about-container">
-            
-            <!-- বাম দিকের ছবির অংশ -->
-            <div class="about-image">
-                <!-- এখানে আপনার গ্রাফিক্স/লোগো ইমেজটি বসাবেন। আপাতত একটি ডামি ডিজাইন দেওয়া হলো -->
-                <div class="dummy-graphic">
-                    <div class="circle-bg">
-                        <h1 style="color: #e50000; font-size: 80px; margin: 0; line-height: 1;">J</h1>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                </a>
+                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red text-lg">
+                        <i class="fa-solid fa-phone-volume"></i>
                     </div>
-                    <div class="floating-text">
-                        <h3>DIGITAL</h3>
-                        <p>MARKETING</p>
+                    <div class="flex flex-col text-sm">
+                        <span class="text-gray-500 text-xs font-semibold">Hotline</span>
+                        <span class="font-bold text-gray-900">+88 01916-367602</span>
                     </div>
                 </div>
             </div>
-
-            <!-- ডান দিকের লেখার অংশ -->
-            <div class="about-content">
-                <span class="badge">JDM OVERVIEW</span>
-                <h2>Plan your business strategy with Our Experts</h2>
-                <p>Our main goal is to make an individual or an organization well-known in order to make it successful in their endeavors to achieve their business objectives. We want to promote ourselves as the best reliable digital marketing services company in the world by leveraging our expertise. Achieving customer satisfaction will be our only help in this journey.</p>
-                
-                <div class="stats-container">
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
-                        <div class="stat-text">
-                            <h4>15+</h4>
-                            <p>Years Experience</p>
-                        </div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
-                        <div class="stat-text">
-                            <h4>500+</h4>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
+    </nav>
 
-    <!-- ==================== CSS (নতুন সেকশনের ডিজাইন) ==================== -->
-    <style>
-        /* --- Features Section CSS --- */
-        .features-section {
-            position: relative;
-            z-index: 20;
-            margin-top: -60px; /* স্লাইডারের ওপর হালকা উঠে থাকার জন্য */
-            padding-bottom: 60px;
-        }
+    <!-- Hero Section -->
+    <div class="bg-brand-darker relative py-20 lg:py-32 overflow-hidden">
+        <div class="absolute left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:bg-brand-red hover:text-white transition z-10 hidden md:flex">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="absolute right-8 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full flex items-center justify-center text-brand-red cursor-pointer hover:bg-brand-red hover:text-white transition z-10 hidden md:flex">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex justify-end">
+            <div class="text-right max-w-3xl" data-aos="fade-up">
+                <p class="text-gray-300 text-lg mb-4 font-medium tracking-wide">15 years' Experience</p>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+                    Bridging Creativity & <br>
+                    for Tangible <span class="pl-3 border-l-4 border-brand-red text-white">Impact</span>
+                </h1>
+                <a href="#" class="inline-block bg-brand-red text-white px-8 py-3 rounded text-lg font-medium hover:bg-red-700 transition shadow-lg shadow-red-500/30">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
 
-        .feature-card {
-            background-color: #ffffff;
-            padding: 40px 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-radius: 8px;
-            position: relative;
-            transition: 0.3s;
-            cursor: pointer;
-            border-bottom: 4px solid transparent;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            border-bottom: 4px solid #e50000;
-        }
-
-        .card-number {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            color: #d1d5db;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .feature-card .icon {
-            font-size: 35px;
-            color: #e50000;
-            margin-bottom: 20px;
-        }
-
-        .feature-card h3 {
-            font-size: 18px;
-            color: #111827;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            font-size: 14px;
-            color: #6b7280;
-            line-height: 1.6;
-        }
-
-        /* লাল রঙের অ্যাক্টিভ কার্ড */
-        .active-card {
-            background-color: #e50000;
-            color: #ffffff;
-        }
-        
-        .active-card .card-number,
-        .active-card .icon,
-        .active-card h3,
-        .active-card p {
-            color: #ffffff;
-        }
-
-        /* --- About Section CSS --- */
-        .about-section {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-
-        .about-container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-        }
-
-        .about-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* বাম দিকের ডামি গ্রাফিক্সের স্টাইল */
-        .dummy-graphic {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .circle-bg {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background-color: #fffaf0; /* হালকা হলুদ ব্যাকগ্রাউন্ড */
-            border: 2px dashed #fcd34d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .floating-text {
-            position: absolute;
-            bottom: 20px;
-            background: #ffffff;
-            padding: 15px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            text-align: center;
-            border-left: 5px solid #e50000;
-        }
-        
-        .floating-text h3 { color: #111827; margin-bottom: 2px; }
-        .floating-text p { color: #e50000; font-weight: 600; font-size: 14px; }
-
-        .about-content {
-            flex: 1;
-        }
-
-        .badge {
-            background-color: #fee2e2;
-            color: #e50000;
-            padding: 5px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .about-content h2 {
-            font-size: 36px;
-            color: #111827;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-
-        .about-content p {
-            color: #6b7280;
-            line-height: 1.8;
-            font-size: 15px;
-            margin-bottom: 30px;
-        }
-
-        .stats-container {
-            display: flex;
-            gap: 40px;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .stat-icon {
-            font-size: 30px;
-            color: #e50000;
-        }
-
-        .stat-text h4 {
-            font-size: 24px;
-            color: #111827;
-        }
-
-        .stat-text p {
-            font-size: 13px;
-            color: #6b7280;
-            margin-top: 2px;
-        }
-
-        /* মোবাইল রেসপন্সিভ */
-        @media (max-width: 991px) {
-            .features-grid { grid-template-columns: repeat(2, 1fr); }
-            .about-container { flex-direction: column; }
-        }
-        @media (max-width: 576px) {
-            .features-grid { grid-template-columns: 1fr; }
-            .stats-container { flex-direction: column; gap: 20px; }
-        }
-    </style>
-<section class="services-section">
-        <div class="container">
-            <div class="section-title">
-                <span class="badge">OUR SERVICES</span>
-                <h2>What We Provide For Your<br>Best Business</h2>
+    <!-- Overlapping Services Cards -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 -mt-20 lg:-mt-24 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white hover:bg-brand-red group rounded shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-red-50 group-hover:bg-red-400 rounded-full flex items-center justify-center text-brand-red group-hover:text-white text-2xl transition-colors duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <span class="text-gray-400 group-hover:text-red-100 font-bold transition-colors duration-300">/ 1</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">SMM Solution</h3>
+                <p class="text-gray-500 group-hover:text-red-50 text-sm transition-colors duration-300">Social Media Marketing</p>
             </div>
             
-            <div class="services-grid">
-                
-                <div class="service-box">
-                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3>Web Development</h3>
-                    <p>We build professional, responsive, and SEO-friendly websites tailored to your business needs.</p>
-                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="bg-white hover:bg-brand-red group rounded shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-4xl text-brand-red group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <span class="text-gray-400 group-hover:text-red-100 font-bold transition-colors duration-300">/ 2</span>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Digital Marketing</h3>
+                <p class="text-gray-500 group-hover:text-red-50 text-sm transition-colors duration-300">Connecting Brands to the Future of Digital Success.</p>
+            </div>
 
-                <div class="service-box">
-                    <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                    <h3>Social Media Marketing</h3>
-                    <p>Boost your brand presence and engage with your target audience across all social platforms.</p>
-                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="bg-white hover:bg-brand-red group rounded shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-brand-red group-hover:text-white text-4xl transition-colors duration-300">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <span class="text-gray-400 group-hover:text-red-100 font-bold transition-colors duration-300">/ 3</span>
                 </div>
+                <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Content Creation</h3>
+                <p class="text-gray-500 group-hover:text-red-50 text-sm transition-colors duration-300">Crafting Strategies, Creating Stories, Delivering Results</p>
+            </div>
 
-                <div class="service-box">
-                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>SEO Optimization</h3>
-                    <p>Rank higher on search engines, drive organic traffic, and increase your business revenue.</p>
-                    <a href="#" class="service-link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="bg-white hover:bg-brand-red group rounded shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-brand-red group-hover:text-white text-4xl transition-colors duration-300">
+                        <i class="fa-solid fa-ribbon"></i>
+                    </div>
+                    <span class="text-gray-400 group-hover:text-red-100 font-bold transition-colors duration-300">/ 4</span>
                 </div>
-
+                <h3 class="text-xl font-bold text-gray-900 group-hover:text-white mb-2 transition-colors duration-300">Brand Identity</h3>
+                <p class="text-gray-500 group-hover:text-red-50 text-sm transition-colors duration-300">Building a Powerful & Memorable Visual Brand.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="cta-section">
-        <div class="container cta-container">
-            <div class="cta-text">
-                <h2>Are you ready to grow your business?</h2>
-                <p>Let's work together to create a powerful digital presence and achieve your goals.</p>
-            </div>
-            <div class="cta-action">
-                <a href="contact.html" class="btn-white">Contact Us Now <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </section>
+    <!-- JDM Overview Section with Image -->
+    <div class="py-16 bg-white relative overflow-hidden">
+        <!-- Abstract Background geometric pattern (top right) -->
+        <div class="absolute top-0 right-0 opacity-10 w-64 h-64 pointer-events-none" style="background-image: linear-gradient(45deg, #000 25%, transparent 25%), linear-gradient(-45deg, #000 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #000 75%), linear-gradient(-45deg, transparent 75%, #000 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px;"></div>
 
-    <style>
-        /* --- Services Section CSS --- */
-        .services-section {
-            padding: 80px 0;
-            background-color: #f9fafb; /* হালকা গ্রে ব্যাকগ্রাউন্ড */
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: #111827;
-            margin-top: 10px;
-            line-height: 1.3;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .service-box {
-            background-color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(229,0,0,0.1); /* হোভার করলে লাল শ্যাডো */
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: #fee2e2;
-            color: #e50000;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 30px;
-            margin-bottom: 25px;
-            transition: 0.3s;
-        }
-
-        .service-box:hover .service-icon {
-            background-color: #e50000;
-            color: #ffffff;
-        }
-
-        .service-box h3 {
-            font-size: 22px;
-            color: #111827;
-            margin-bottom: 15px;
-        }
-
-        .service-box p {
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .service-link {
-            text-decoration: none;
-            color: #111827;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
-
-        .service-link i {
-            color: #e50000;
-        }
-
-        .service-box:hover .service-link {
-            color: #e50000;
-        }
-
-        /* --- Call To Action CSS --- */
-        .cta-section {
-            background-color: #e50000; /* লাল ব্যাকগ্রাউন্ড */
-            padding: 60px 0;
-            background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(#dots)"/></svg>');
-        }
-
-        .cta-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cta-text h2 {
-            color: #ffffff;
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-
-        .cta-text p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 16px;
-        }
-
-        .btn-white {
-            background-color: #ffffff;
-            color: #e50000;
-            padding: 15px 35px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-        }
-
-        .btn-white:hover {
-            background-color: #111827;
-            color: #ffffff;
-        }
-
-        /* মোবাইল রেসপন্সিভ */
-        @media (max-width: 991px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); }
-            .cta-container { flex-direction: column; text-align: center; gap: 30px; }
-        }
-        @media (max-width: 768px) {
-            .services-grid { grid-template-columns: 1fr; }
-        }
-    </style>
-<section class="testimonial-section">
-        <div class="container">
-            <div class="section-title">
-                <span class="badge">CLIENT SAY</span>
-                <h2>What Our Happy Clients<br>Say About Us</h2>
-            </div>
-            
-            <div class="testimonial-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>"JDM Agency transformed our online presence. Their digital marketing strategies helped us double our sales in just 3 months. Highly recommended!"</p>
-                    <div class="client-info">
-                        <div class="client-details">
-                            <h4>John Doe</h4>
-                            <span>CEO, TechCompany</span>
-                        </div>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <!-- Left Visual Area -->
+                <div data-aos="fade-right" class="relative flex justify-center lg:justify-start items-center h-[500px]">
+                    <!-- Dot Pattern block -->
+                    <div class="absolute left-0 top-1/4 w-32 h-32 dot-pattern opacity-50 z-0"></div>
+                    
+                    <!-- Main Graphic Container using the uploaded image -->
+                    <div class="relative z-10 w-full max-w-sm mx-auto lg:ml-8 mt-8">
+                        <img src="Digital-Marketing-Post.png" alt="Digital Marketing" class="w-full h-auto relative z-20">
+
+                        <!-- Stats Chart Card -->
+                        <div class="absolute bottom-2 -left-4 md:-left-12 bg-white rounded-xl shadow-xl p-5 w-48 z-40 border border-gray-100">
+                            <h4 class="text-2xl font-bold text-brand-navy leading-none">98%</h4>
+                            <p class="text-xs text-gray-500 mb-4">Business Goal</p>
+                            <!-- Fake Bar Chart -->
+                            <div class="flex justify-between items-end h-16 gap-2">
+                                <div class="flex flex-col items-center gap-1">
+                                    <div class="w-2.5 bg-green-500 h-10 rounded-full"></div>
+                                    <span class="text-[9px] text-gray-400">Jan</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div class="w-2.5 bg-green-500 h-12 rounded-full"></div>
+                                    <span class="text-[9px] text-gray-400">Feb</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div class="w-2.5 bg-green-500 h-8 rounded-full"></div>
+                                    <span class="text-[9px] text-gray-400">Mar</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div class="w-2.5 bg-green-500 h-14 rounded-full"></div>
+                                    <span class="text-[9px] text-gray-400">Apl</span>
+                                </div>
+                                <div class="flex flex-col items-center gap-1">
+                                    <div class="w-2.5 bg-green-500 h-16 rounded-full"></div>
+                                    <span class="text-[9px] text-gray-400">May</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="testimonial-card">
-                    <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>"The team is very professional and creative. They designed a beautiful website for us and managed our social media perfectly. Best agency!"</p>
-                    <div class="client-info">
-                        <div class="client-details">
-                            <h4>Sarah Smith</h4>
-                            <span>Founder, BeautyBrand</span>
+                <!-- Right Content Area -->
+                <div data-aos="fade-left" class="lg:pl-8">
+                    <div class="inline-block px-3 py-1 bg-red-50 text-brand-red text-xs font-bold rounded-full mb-6 tracking-widest uppercase">
+                        JDM Overview
+                    </div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Plan your business strategy with Our Experts
+                    </h2>
+                    <p class="text-gray-500 text-sm md:text-base mb-10 leading-relaxed font-light">
+                        Our main goal is to make an individual or an organization well-known in order to make it successful in their endeavors to achieve their business objectives. We want to promote ourselves as the best reliable digital marketing services company in the world by leveraging our expertise. Achieving customer satisfaction will be our only help in this journey.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="border border-gray-200 rounded-xl p-5 flex items-center gap-5 bg-white shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center text-brand-red text-2xl">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-gray-900 leading-none">15+</h4>
+                                <p class="text-sm text-gray-500 mt-1">Years Experience</p>
+                            </div>
                         </div>
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        
+                        <div class="border border-gray-200 rounded-xl p-5 flex items-center gap-5 bg-white shadow-sm hover:shadow-md transition">
+                            <div class="w-14 h-14 rounded-full bg-red-50 flex items-center justify-center text-brand-red text-2xl">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-2xl font-bold text-gray-900 leading-none">500+</h4>
+                                <p class="text-sm text-gray-500 mt-1">Happy Clients</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-    </section>
+    </div>
 
-    <footer class="footer-section">
-        <div class="container">
-            <div class="footer-grid">
-                
-                <div class="footer-col">
-                    <a href="#" class="logo footer-logo">
-                        <svg width="30" height="30" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 5 C15 5, 10 25, 20 35 C30 25, 30 15, 30 15" stroke="#e50000" stroke-width="4" stroke-linecap="round"/>
-                        </svg>
-                        <span style="color: #fff; font-size: 22px; font-weight: 700;">JDM Agency</span>
+    <!-- Client Say Section -->
+    <div class="py-20 bg-[#f9f9f9]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
+                <div>
+                    <div class="inline-block px-3 py-1 bg-red-100 text-brand-red text-xs font-bold rounded mb-4 tracking-wider uppercase">
+                        Client Says
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">We have 500+ Client in our Journey.</h2>
+                </div>
+                <a href="client-say.html" class="mt-4 md:mt-0 bg-brand-red text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition shadow">
+                    See More
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://via.placeholder.com/50" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Professor Dr. Altaf Uddin Ahmed</h4>
+                            <p class="text-xs text-gray-500 line-clamp-1">Superintendent of Islami Bank Hospital</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"Since marketing is a compulsory subject in business, my suggestion is JDM agency. The Creativity and sincerity of the JDM agency impressed me."</p>
+                    <a href="#" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                </div>
+                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="client-1.png" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Dr. A Z M Farhad</h4>
+                            <p class="text-xs text-gray-500 line-clamp-1">Chairman of Dr. Israt Jahan Hospital</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"I was looking for a trusted agency for marketing my company. Who can take all the responsibility of my company's marketing. Then I found..."</p>
+                    <a href="#" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                </div>
+                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="https://via.placeholder.com/50" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Dr. Nahal Mostak Khan</h4>
+                            <p class="text-xs text-gray-500 line-clamp-1">CEO of Mobile Eye Hospital Limited</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"I have been receiving the services of JDM Agency for a long time. I like their professionalism and sincerity. I wish their agency lives for a thousand years."</p>
+                    <a href="#" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                </div>
+                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                            <img src="client-5.png" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 text-sm">Md. Miraj Khan</h4>
+                            <p class="text-xs text-gray-500 line-clamp-1">Unicare Health | CEO</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"The JDM agency has made a significant contribution to the level we have reached today. Especially the CEO of the company is very sincere..."</p>
+                    <a href="#" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guidance & Services Section -->
+    <div class="bg-[#1a1d24] py-20 relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+            <h1 class="text-9xl font-black text-white">DIGITAL</h1>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-8">
+                        We'll Ensure You Always Get the <br> <span class="text-brand-red">Best Guidance.</span>
+                    </h2>
+                    <a href="#" class="inline-flex items-center gap-3 text-white hover:text-brand-red transition">
+                        <div class="w-12 h-12 rounded-full border-2 border-brand-red flex items-center justify-center text-brand-red">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <span class="font-medium">Watch Video</span>
                     </a>
-                    <p class="footer-desc">We are a leading digital marketing agency dedicated to helping businesses grow and succeed in the digital world.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-ribbon text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">Brand Identity</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-magnifying-glass-chart text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">SEO Optimization</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-cube text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">3D Animation</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-hashtag text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">Social Media</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-brands fa-product-hunt text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">Product Design</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="bg-[#242832] rounded-full px-6 py-4 flex items-center justify-between text-white hover:bg-brand-red shadow-lg cursor-pointer transform hover:scale-105 transition group">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-pen-nib text-xl text-brand-red group-hover:text-white transition-colors"></i>
+                            <span class="font-semibold">Design & Concept</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-white transition-colors"></i>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Services</a></li>
-                        <li><a href="#">Pricing Plan</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
+    <!-- Footer -->
+    <footer class="bg-brand-darker pt-16" data-aos="zoom-in">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+            <h2 class="text-4xl md:text-6xl font-extrabold tracking-wider text-white mb-8">
+                <span class="text-brand-red">L</span>ET'S <span class="text-brand-orange">G</span>ET IN <span class="text-brand-red">T</span>OUCH
+            </h2>
+            <div class="w-full h-[1px] bg-brand-red opacity-50 mb-12"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-6">Contact</h3>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>+8801916-367602</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>Hello@jdmagency.com</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-angles-right text-brand-red mt-1"></i>
+                        <span>Head Office # 14th Floor, House: 05, Sector: 18, Uttara, Dhaka, Bangladesh</span>
+                    </li>
+                </ul>
+                <div class="mt-8">
+                    <span class="text-white text-sm mr-3">Follow:</span>
+                    <div class="inline-flex gap-3 text-gray-400">
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-6">Quick Links</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm text-gray-400">
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Company</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Service</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Pricing</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Support</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Careers</a></li>
+                    </ul>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>How It's Work</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Case Studies</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Press media</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-red transition"><i class="fa-solid fa-angles-right text-brand-red mr-2"></i>Contact</a></li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="footer-col">
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Digital Marketing</a></li>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">SEO Optimization</a></li>
-                        <li><a href="#">Content Creation</a></li>
-                        <li><a href="#">Social Media</a></li>
-                    </ul>
+            <div>
+                <div class="border border-brand-red p-6 rounded bg-opacity-10 bg-brand-red">
+                    <h3 class="text-lg font-semibold text-white mb-2">For Free Consultancy</h3>
+                    <p class="text-xs text-gray-400 mb-4">Fields marked with an * are required</p>
+                    <form class="space-y-3 text-sm">
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Name *</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Company Name</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Phone *</label>
+                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 font-medium mb-1">Location *</label>
+                            <select class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red appearance-none">
+                                <option>Select Location</option>
+                                <option>Dhaka</option>
+                                <option>Outside Dhaka</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-gray-200 text-gray-900 px-6 py-2 rounded text-sm font-semibold hover:bg-white transition mt-2">Submit</button>
+                    </form>
                 </div>
-
-                <div class="footer-col">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-contact">
-                        <li><i class="fa-solid fa-location-dot"></i> H#5, Sector # 18, Uttara, Dhaka</li>
-                        <li><i class="fa-solid fa-phone"></i> +88 01916-367602</li>
-                        <li><i class="fa-solid fa-envelope"></i> Hello@jolshiridigital.com</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
         
-        <div class="copyright-area">
-            <div class="container">
-                <p>&copy; 2024 JDM Agency. All Rights Reserved. Designed by JDM.</p>
-            </div>
+        <div class="border-t border-gray-800 py-6 text-center text-sm text-gray-500 bg-[#090b14]">
+            Copyright © 2026 | JDM Agency
         </div>
     </footer>
 
-    <style>
-        /* --- Testimonial Section CSS --- */
-        .testimonial-section {
-            padding: 80px 0;
-            background-color: #ffffff;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .testimonial-card {
-            background-color: #f9fafb;
-            padding: 40px;
-            border-radius: 8px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            border-bottom: 4px solid #e50000;
-        }
-
-        .quote-icon {
-            font-size: 40px;
-            color: #fee2e2;
-            position: absolute;
-            top: 30px;
-            right: 30px;
-        }
-
-        .testimonial-card p {
-            color: #4b5563;
-            font-size: 16px;
-            line-height: 1.8;
-            font-style: italic;
-            margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .client-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #e5e7eb;
-            padding-top: 20px;
-        }
-
-        .client-details h4 {
-            color: #111827;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .client-details span {
-            color: #e50000;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .stars {
-            color: #fbbf24;
-            font-size: 14px;
-        }
-
-        /* --- Footer Section CSS --- */
-        .footer-section {
-            background-color: #0B1120; /* গাঢ় নীল/কালো ব্যাকগ্রাউন্ড */
-            color: #d1d5db;
-            padding-top: 80px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-logo {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer-desc {
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 15px;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-social a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255,255,255,0.05);
-            color: #ffffff;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-social a:hover {
-            background-color: #e50000;
-        }
-
-        .footer-col h3 {
-            color: #ffffff;
-            font-size: 20px;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background-color: #e50000;
-        }
-
-        .footer-links, .footer-contact {
-            list-style: none;
-        }
-
-        .footer-links li, .footer-contact li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: #d1d5db;
-            text-decoration: none;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        .footer-links a:hover {
-            color: #e50000;
-            transform: translateX(5px);
-        }
-
-        .footer-contact li {
-            display: flex;
-            gap: 15px;
-            line-height: 1.6;
-        }
-
-        .footer-contact i {
-            color: #e50000;
-            margin-top: 4px;
-        }
-
-        .copyright-area {
-            background-color: #060913;
-            padding: 20px 0;
-            text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .copyright-area p {
-            font-size: 14px;
-            color: #9ca3af;
-        }
-
-        /* মোবাইল রেসপন্সিভ */
-        @media (max-width: 991px) {
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 576px) {
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <!-- AOS Animation Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-in-out'
+        });
+    </script>
+</body>
+</html>
