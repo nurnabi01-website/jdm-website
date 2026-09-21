@@ -123,16 +123,23 @@
 .hover-animate-card {
     transition: all 0.4s ease-in-out;
 }
+.hover-animate-card * {
+    transition: color 0.4s ease-in-out;
+}
 .hover-animate-card:hover {
     transform: translateY(-12px);
     background-color: #e52a2d !important;
     color: #ffffff !important;
     box-shadow: 0 15px 30px rgba(229, 42, 45, 0.3);
 }
+.hover-animate-card:hover h1, 
+.hover-animate-card:hover h2, 
 .hover-animate-card:hover h3, 
-.hover-animate-card:hover p,
-.hover-animate-card:hover span,
-.hover-animate-card:hover a {
+.hover-animate-card:hover h4, 
+.hover-animate-card:hover p, 
+.hover-animate-card:hover span, 
+.hover-animate-card:hover a,
+.hover-animate-card:hover i {
     color: #ffffff !important;
 }
     </style>
