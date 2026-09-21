@@ -150,21 +150,6 @@
         @media (max-width: 991px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 576px) { .footer-grid { grid-template-columns: 1fr; } }
         }
-        /* Wave Text Animation */
-  .waviy-text span {
-    position: relative;
-    display: inline-block;
-    animation: waveBounce 2s infinite;
-    animation-delay: calc(0.1s * var(--i));
-  }
-  @keyframes waveBounce {
-    0%, 40%, 100% {
-      transform: translateY(0);
-    }
-    20% {
-      transform: translateY(-15px);
-    }
-  }
     </style>
 </head>
 <body>
@@ -245,26 +230,61 @@
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer-section">
-        <div class="waviy-text text-center text-4xl md:text-6xl font-extrabold tracking-wider text-white mb-8">
-   <span style="--i:1;" class="text-brand-red">L</span>
-   <span style="--i:2;">E</span>
-   <span style="--i:3;">T</span>
-   <span style="--i:4;">'</span>
-   <span style="--i:5;">S</span>
-   <span>&nbsp;&nbsp;</span>
-   <span style="--i:6;" class="text-brand-orange">G</span>
-   <span style="--i:7;">E</span>
-   <span style="--i:8;">T</span>
-   <span>&nbsp;&nbsp;</span>
-   <span style="--i:9;">I</span>
-   <span style="--i:10;">N</span>
-   <span>&nbsp;&nbsp;</span>
-   <span style="--i:11;" class="text-brand-red">T</span>
-   <span style="--i:12;">O</span>
-   <span style="--i:13;">U</span>
-   <span style="--i:14;">C</span>
-   <span style="--i:15;">H</span>
-</div>
+        <!-- Let's Get In Touch Animation -->
+    <style>
+      .waviy-wrapper {
+          text-align: center;
+          padding: 40px 0 20px 0;
+          width: 100%;
+          display: block;
+      }
+      .waviy-text {
+          font-size: 50px;
+          font-weight: 800;
+          letter-spacing: 5px;
+          color: #ffffff;
+      }
+      @media (max-width: 768px) {
+          .waviy-text { font-size: 30px; }
+      }
+      .waviy-text span {
+          position: relative;
+          display: inline-block;
+          animation: waveBounce 2s infinite;
+          animation-delay: calc(0.1s * var(--i));
+      }
+      .text-red { color: #e52a2d; }
+      .text-orange { color: #f59e0b; }
+      
+      @keyframes waveBounce {
+        0%, 40%, 100% { transform: translateY(0); }
+        20% { transform: translateY(-15px); }
+      }
+    </style>
+
+    <div class="waviy-wrapper">
+        <div class="waviy-text">
+           <span style="--i:1;" class="text-red">L</span>
+           <span style="--i:2;">E</span>
+           <span style="--i:3;">T</span>
+           <span style="--i:4;">'</span>
+           <span style="--i:5;">S</span>
+           <span>&nbsp;&nbsp;</span>
+           <span style="--i:6;" class="text-orange">G</span>
+           <span style="--i:7;">E</span>
+           <span style="--i:8;">T</span>
+           <span>&nbsp;&nbsp;</span>
+           <span style="--i:9;">I</span>
+           <span style="--i:10;">N</span>
+           <span>&nbsp;&nbsp;</span>
+           <span style="--i:11;" class="text-red">T</span>
+           <span style="--i:12;">O</span>
+           <span style="--i:13;">U</span>
+           <span style="--i:14;">C</span>
+           <span style="--i:15;">H</span>
+        </div>
+    </div>
+    <!-- End Let's Get In Touch -->
         <div class="footer-grid">
             <div class="footer-col">
                 <a href="index.html" class="logo footer-logo">
