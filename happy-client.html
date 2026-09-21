@@ -116,6 +116,21 @@
     .logo-swiper .swiper-slide img:active {
         cursor: grabbing;
     }
+        /* Wave Text Animation */
+  .waviy-text span {
+    position: relative;
+    display: inline-block;
+    animation: waveBounce 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+  }
+  @keyframes waveBounce {
+    0%, 40%, 100% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(-15px);
+    }
+  }
 </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased">
@@ -224,9 +239,26 @@
     <!-- Let's Get In Touch Footer -->
     <footer class="bg-brand-darker pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-            <h2 class="text-4xl md:text-6xl font-extrabold tracking-wider text-white mb-8">
-                <span class="text-brand-red">L</span>ET'S <span class="text-brand-orange">G</span>ET IN <span class="text-brand-red">T</span>OUCH
-            </h2>
+            <div class="waviy-text text-center text-4xl md:text-6xl font-extrabold tracking-wider text-white mb-8">
+   <span style="--i:1;" class="text-brand-red">L</span>
+   <span style="--i:2;">E</span>
+   <span style="--i:3;">T</span>
+   <span style="--i:4;">'</span>
+   <span style="--i:5;">S</span>
+   <span>&nbsp;&nbsp;</span>
+   <span style="--i:6;" class="text-brand-orange">G</span>
+   <span style="--i:7;">E</span>
+   <span style="--i:8;">T</span>
+   <span>&nbsp;&nbsp;</span>
+   <span style="--i:9;">I</span>
+   <span style="--i:10;">N</span>
+   <span>&nbsp;&nbsp;</span>
+   <span style="--i:11;" class="text-brand-red">T</span>
+   <span style="--i:12;">O</span>
+   <span style="--i:13;">U</span>
+   <span style="--i:14;">C</span>
+   <span style="--i:15;">H</span>
+</div>
             <div class="w-full h-[1px] bg-brand-red opacity-50 mb-12"></div>
         </div>
 
