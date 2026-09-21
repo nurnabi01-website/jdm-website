@@ -52,6 +52,28 @@
             background-image: radial-gradient(#cbd5e1 2px, transparent 2px);
             background-size: 16px 16px;
         }
+        /* WhatsApp Button Hover Animation */
+  .btn-whatsapp-animate {
+    transition: all 0.3s ease-in-out !important;
+  }
+  .btn-whatsapp-animate:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    box-shadow: 0 10px 20px rgba(226, 28, 33, 0.4) !important;
+  }
+
+  /* Hotline Phone Ringing Animation */
+  @keyframes phoneRing {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .icon-ring-animate {
+    animation: phoneRing 1.5s infinite ease-in-out;
+  }
     </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased overflow-x-hidden">
@@ -103,11 +125,11 @@
             </div>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md">
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md <a href="YOUR_WHATSAPP_LINK" class="bg-brand-red hover:bg-red-700 text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 btn-whatsapp-animate">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
                 </a>
                 <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
-                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red text-lg">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red text-lg <div class="w-10 h-10 rounded-full bg-brand-red text-white flex items-center justify-center icon-ring-animate">
                         <i class="fa-solid fa-phone-volume"></i>
                     </div>
                     <div class="flex flex-col text-sm">
