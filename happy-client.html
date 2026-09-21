@@ -37,6 +37,58 @@
         }
     </script>
     <style>
+        /* WhatsApp Button Sequential Letter Spin Animation */
+        .btn-whatsapp-animate {
+            perspective: 1000px;
+        }
+        .btn-whatsapp-animate i {
+            transition: transform 0.6s ease-in-out !important;
+        }
+        /* Target the letters container */
+        .btn-whatsapp-animate .whatsapp-letters {
+            display: inline-flex;
+            gap: 1px; /* অক্ষরগুলোর মাঝে হালকা একটু ফাঁকা রাখার জন্য */
+        }
+        
+        /* Sequential spin effect for each letter span */
+        .btn-whatsapp-animate .letter {
+            display: inline-block;
+            transition: transform 0.6s ease-in-out !important;
+        }
+
+        /* Apply 360-degree rotation to each letter on hover */
+        .btn-whatsapp-animate:hover .letter {
+            transform: rotate(360deg) !important;
+        }
+
+        /* Add sequential transition delays for each of the 8 letters */
+        .btn-whatsapp-animate .letter:nth-child(1) { transition-delay: 0.1s; }
+        .btn-whatsapp-animate .letter:nth-child(2) { transition-delay: 0.15s; }
+        .btn-whatsapp-animate .letter:nth-child(3) { transition-delay: 0.2s; }
+        .btn-whatsapp-animate .letter:nth-child(4) { transition-delay: 0.25s; }
+        .btn-whatsapp-animate .letter:nth-child(5) { transition-delay: 0.3s; }
+        .btn-whatsapp-animate .letter:nth-child(6) { transition-delay: 0.35s; }
+        .btn-whatsapp-animate .letter:nth-child(7) { transition-delay: 0.4s; }
+        .btn-whatsapp-animate .letter:nth-child(8) { transition-delay: 0.45s; }
+
+        /* The icon still spins as a block */
+        .btn-whatsapp-animate:hover i {
+            transform: rotate(360deg) !important;
+        }
+
+  /* Hotline Phone Ringing Animation */
+  @keyframes phoneRing {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(15deg); }
+    20% { transform: rotate(-15deg); }
+    30% { transform: rotate(15deg); }
+    40% { transform: rotate(-15deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+  .icon-ring-animate {
+    animation: phoneRing 1.5s infinite ease-in-out;
+  }
     /* Logo Slider CSS */
     .client-logo-section {
         padding: 60px 0;
@@ -118,20 +170,24 @@
             </div>
 
             <!-- Right Actions -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-md hover:shadow-lg">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
-                </a>
-                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
-                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red text-lg">
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
-                    <div class="flex flex-col text-sm">
-                        <span class="text-gray-500 text-xs font-semibold">Hotline</span>
-                        <span class="font-bold text-gray-900">+88 01916-367602</span>
-                    </div>
-                </div>
-            </div>
+<div class="hidden md:flex items-center gap-4">
+    <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-red-500/30 btn-whatsapp-animate">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span class="whatsapp-letters">
+            <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
+        </span>
+    </a>
+    
+    <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red icon-ring-animate">
+            <i class="fa-solid fa-phone-volume"></i>
+        </div>
+        <div>
+            <p class="text-[10px] text-gray-500 font-bold uppercase leading-tight">Hotline</p>
+            <p class="font-bold text-gray-900 text-sm leading-tight">+8801916-367602</p>
+        </div>
+    </div>
+</div>
         </div>
     </nav>
 
