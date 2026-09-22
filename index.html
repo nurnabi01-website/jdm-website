@@ -634,38 +634,38 @@
       are required
     </p>
 
- <form class="space-y-0">
-
+<form class="w-full">
+  
   <!-- Name -->
-  <div class="mb-6">
-    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+  <div class="mb-5 flex flex-col items-start w-full">
+    <label class="block text-[16px] leading-[22px] font-semibold text-[#bdbdd8] mb-1">
       Name <span class="text-red-500">*</span>
     </label>
-    <input type="text" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+    <input type="text" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8] box-border">
   </div>
 
   <!-- Company Name -->
-  <div class="mb-6">
-    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+  <div class="mb-5 flex flex-col items-start w-full">
+    <label class="block text-[16px] leading-[22px] font-semibold text-[#bdbdd8] mb-1">
       Company Name
     </label>
-    <input type="text" class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+    <input type="text" class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8] box-border">
   </div>
 
   <!-- Phone -->
-  <div class="mb-6">
-    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
-      Phone <span class="text-red-500">*</span>
+  <div class="mb-5 flex flex-col items-start w-full">
+    <label class="block text-[16px] leading-[22px] font-semibold text-[#bdbdd8] mb-1">
+      Phone
     </label>
-    <input type="tel" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+    <input type="tel" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8] box-border">
   </div>
 
   <!-- Location -->
-  <div class="mb-6">
-    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+  <div class="mb-6 flex flex-col items-start w-full">
+    <label class="block text-[16px] leading-[22px] font-semibold text-[#bdbdd8] mb-1">
       Location <span class="text-red-500">*</span>
     </label>
-    <select required class="w-full h-[51px] bg-[#414141] border border-[#666666] rounded-none px-3 text-white appearance-auto focus:outline-none focus:border-[#bdbdd8]">
+    <select required class="w-full h-[51px] bg-[#414141] border border-[#666666] rounded-none px-3 text-white appearance-auto focus:outline-none focus:border-[#bdbdd8] box-border">
       <option value="" selected disabled>- Select State -</option>
       <option value="Dhaka">Dhaka</option>
       <option value="Chittagong">Chittagong</option>
@@ -677,8 +677,8 @@
   </div>
 
   <!-- Submit Button -->
-  <div>
-    <button type="submit" class="h-[51px] bg-[#d0d0d0] text-[#222222] px-6 rounded-none text-[18px] font-semibold hover:bg-white transition">
+  <div class="flex justify-start w-full mt-2">
+    <button type="submit" class="h-[51px] bg-[#d0d0d0] text-[#222222] px-6 rounded-none text-[18px] font-semibold hover:bg-white transition cursor-pointer">
       Submit
     </button>
   </div>
