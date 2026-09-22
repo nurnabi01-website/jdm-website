@@ -634,76 +634,56 @@
       are required
     </p>
 
-    <form class="space-y-0">
+ <form class="space-y-0">
 
-      <!-- Name -->
-      <div class="mb-6">
-        <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
-          Name <span class="text-red-500">*</span>
-        </label>
+  <!-- Name -->
+  <div class="mb-6">
+    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+      Name <span class="text-red-500">*</span>
+    </label>
+    <input type="text" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+  </div>
 
-        <input
-          type="text"
-          required
-          class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#777777]"
-        >
-      </div>
+  <!-- Company Name -->
+  <div class="mb-6">
+    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+      Company Name
+    </label>
+    <input type="text" class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+  </div>
 
-      <!-- Company Name -->
-      <div class="mb-6">
-        <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
-          Company Name
-        </label>
+  <!-- Phone -->
+  <div class="mb-6">
+    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+      Phone <span class="text-red-500">*</span>
+    </label>
+    <input type="tel" required class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#bdbdd8]">
+  </div>
 
-        <input
-          type="text"
-          class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#777777]"
-        >
-      </div>
+  <!-- Location -->
+  <div class="mb-6">
+    <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
+      Location <span class="text-red-500">*</span>
+    </label>
+    <select required class="w-full h-[51px] bg-[#414141] border border-[#666666] rounded-none px-3 text-white appearance-auto focus:outline-none focus:border-[#bdbdd8]">
+      <option value="" selected disabled>- Select State -</option>
+      <option value="Dhaka">Dhaka</option>
+      <option value="Chittagong">Chittagong</option>
+      <option value="Rajshahi">Rajshahi</option>
+      <option value="Sylhet">Sylhet</option>
+      <option value="Barisal">Barisal</option>
+      <option value="Khulna">Khulna</option>
+    </select>
+  </div>
 
-      <!-- Phone -->
-      <div class="mb-6">
-        <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
-          Phone <span class="text-red-500">*</span>
-        </label>
+  <!-- Submit Button -->
+  <div>
+    <button type="submit" class="h-[51px] bg-[#d0d0d0] text-[#222222] px-6 rounded-none text-[18px] font-semibold hover:bg-white transition">
+      Submit
+    </button>
+  </div>
 
-        <input
-          type="tel"
-          required
-          class="w-full h-[51px] bg-[#2b2b2b] border border-[#555555] rounded-none px-3 text-white focus:outline-none focus:border-[#777777]"
-        >
-      </div>
-
-<!-- Location -->
-<div class="mb-6">
-  <label class="block text-[18px] leading-[22px] font-semibold text-[#bdbdd8] mb-3">
-    Location <span class="text-red-500">*</span>
-  </label>
-
-  <select
-    required
-    class="w-full h-[51px] bg-[#414141] border border-[#666666] rounded-none px-3 text-white appearance-auto focus:outline-none focus:border-[#777777]"
-  >
-    <option value="" selected disabled>
-      Select Location
-    </option>
-    <option value="Dhaka">Dhaka</option>
-    <option value="Chittagong">Chittagong</option>
-    <option value="Rajshahi">Rajshahi</option>
-    <option value="Sylhet">Sylhet</option>
-    <option value="Barisal">Barisal</option>
-    <option value="Khulna">Khulna</option>
-  </select>
-</div>
-
-<!-- Submit Button -->
-<div>
-  <button
-    type="submit"
-    class="h-[51px] bg-[#d0d0d0] text-[#222222] px-4 rounded-none text-[14px] font-semibold hover:bg-white transition"
-  >
-    Submit
-  </button>
+</form>
 </div>
             </div>
         </div>
