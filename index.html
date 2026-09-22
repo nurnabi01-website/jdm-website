@@ -944,7 +944,54 @@
 </script>
 <!-- HERO SLIDER SCRIPT END -->
 <!-- ============================================== -->
+<button id="scrollToTopBtn" class="fixed bottom-8 right-8 z-[99] flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-[0_5px_15px_rgba(0,0,0,0.15)] cursor-pointer opacity-0 translate-y-10 pointer-events-none transition-all duration-500 hover:scale-110 group">
+        <svg class="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#f3f4f6" stroke-width="4"></circle>
+            <circle id="progressCircle" cx="50" cy="50" r="46" fill="none" stroke="#e52a2d" stroke-width="6" stroke-linecap="round" class="transition-all duration-150 ease-out"></circle>
+        </svg>
+        <i class="fa-solid fa-arrow-up text-brand-red text-lg relative z-10 group-hover:-translate-y-1 transition-transform duration-300"></i>
+    </button>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        const progressCircle = document.getElementById('progressCircle');
+        
+        // বৃত্তের পরিধি (Circumference) বের করা: 2 * pi * r (যেখানে r = 46)
+        const radius = 46;
+        const circumference = 2 * Math.PI * radius;
 
-    
+        // ডিফল্টভাবে ড্যাশঅ্যারে এবং অফসেট সেট করা
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
+
+        window.addEventListener('scroll', function() {
+            // পেজ কতটুকু স্ক্রল হয়েছে তার পার্সেন্টেজ বের করা
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = scrollTop / scrollHeight;
+
+            // স্ক্রল অনুযায়ী লাল বর্ডার (Stroke) ড্র করা
+            const drawLength = circumference - (scrollPercentage * circumference);
+            progressCircle.style.strokeDashoffset = drawLength;
+
+            // স্ক্রল ১০০ পিক্সেল নিচে নামলে বাটনটি শো করানো
+            if (scrollTop > 100) {
+                scrollBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                scrollBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                scrollBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
+        });
+
+        // বাটনে ক্লিক করলে স্মুথলি একদম উপরে চলে যাওয়া
+        scrollBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </body>
 </html>
