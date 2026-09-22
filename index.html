@@ -180,30 +180,34 @@
       animation: continuousRotate 2s linear infinite;
   }
 
-        /* Watch Video Ripple Animation */
+       /* Watch Video Ripple Animation (White Stroke) */
   .video-play-btn {
       position: relative;
       z-index: 10;
   }
-  .video-play-btn::before,
-  .video-play-btn::after {
+  .video-play-btn::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       width: 100%;
       height: 100%;
-      background-color: #e52a2d; /* brand-red */
+      background-color: transparent; /* ভেতরের রঙ ফাঁকা থাকবে */
+      border: 2px solid rgba(255, 255, 255, 0.8); /* শুধুমাত্র সাদা রঙের স্ট্রোক */
       border-radius: 50%;
       z-index: -1;
-      animation: ripplePulse 2s linear infinite;
+      animation: whiteStrokePulse 2s ease-out infinite;
   }
-  .video-play-btn::after {
-      animation-delay: 1s;
-  }
-  @keyframes ripplePulse {
-      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-      100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+  
+  @keyframes whiteStrokePulse {
+      0% { 
+          transform: translate(-50%, -50%) scale(1); 
+          opacity: 1; 
+      }
+      100% { 
+          transform: translate(-50%, -50%) scale(2.2); /* কতটুকু বড় হয়ে মিলিয়ে যাবে */
+          opacity: 0; 
+      }
   }
     </style>
 </head>
