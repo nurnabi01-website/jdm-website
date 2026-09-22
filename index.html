@@ -151,16 +151,26 @@
     transform: rotateY(360deg);
 }
 
-        /* Wave Animation for See More Button */
-  @keyframes waveBtn {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-8deg); }
-    50% { transform: rotate(8deg); }
-    75% { transform: rotate(-8deg); }
+       /* Sequential Letter Wave Animation for See More Button */
+  .see-more-animate .letter {
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
   }
-  .hover-wave-btn:hover {
-    animation: waveBtn 0.5s ease-in-out infinite;
+  .see-more-animate:hover .letter {
+      animation: waveBounceLetter 0.5s ease-in-out infinite;
   }
+  @keyframes waveBounceLetter {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+  }
+  .see-more-animate .letter:nth-child(1) { animation-delay: 0.05s; }
+  .see-more-animate .letter:nth-child(2) { animation-delay: 0.1s; }
+  .see-more-animate .letter:nth-child(3) { animation-delay: 0.15s; }
+  .see-more-animate .letter:nth-child(4) { animation-delay: 0.2s; }
+  .see-more-animate .letter:nth-child(5) { animation-delay: 0.25s; }
+  .see-more-animate .letter:nth-child(6) { animation-delay: 0.3s; }
+  .see-more-animate .letter:nth-child(7) { animation-delay: 0.35s; }
+  .see-more-animate .letter:nth-child(8) { animation-delay: 0.4s; }
 
         /* Continuous Rotating Animation for Corner Triangle Icon */
   @keyframes continuousRotate {
@@ -488,7 +498,7 @@
         </div>
     </div>
 
-    <!-- Client Say Section -->
+   <!-- Client Say Section -->
     <div class="py-20 bg-[#f9f9f9]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-up">
@@ -498,9 +508,9 @@
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">We have 500+ Client in our Journey.</h2>
                 </div>
-                <!-- See More Button with Wave Animation -->
-                <a href="client-say.html" class="mt-4 md:mt-0 bg-brand-red text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition shadow inline-block hover-wave-btn">
-                    See More
+                <!-- See More Button with Letter Wave Animation -->
+                <a href="client-say.html" class="mt-4 md:mt-0 bg-brand-red text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition shadow inline-block see-more-animate">
+                    <span class="letter">S</span><span class="letter">e</span><span class="letter">e</span>&nbsp;<span class="letter">M</span><span class="letter">o</span><span class="letter">r</span><span class="letter">e</span>
                 </a>
             </div>
 
@@ -512,9 +522,9 @@
 
                     <!-- Corner Triangle & Continuous Spinning Icon -->
                     <div class="absolute top-0 right-0 z-20 overflow-hidden w-12 h-12 pointer-events-none">
-                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-white transform rotate-45 transition-transform duration-500 group-hover:translate-x-0 group-hover:-translate-y-0 translate-x-12 -translate-y-12"></div>
+                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-red group-hover:bg-white transform rotate-45 transition-colors duration-500 translate-x-12 -translate-y-12 group-hover:translate-x-0 group-hover:-translate-y-0 shadow-sm"></div>
                         <div class="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
-                            <i class="fa-solid fa-play text-brand-red text-[10px] animate-continuous-spin"></i>
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] animate-continuous-spin"></i>
                         </div>
                     </div>
 
@@ -541,9 +551,9 @@
 
                     <!-- Corner Triangle & Continuous Spinning Icon -->
                     <div class="absolute top-0 right-0 z-20 overflow-hidden w-12 h-12 pointer-events-none">
-                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-white transform rotate-45 transition-transform duration-500 group-hover:translate-x-0 group-hover:-translate-y-0 translate-x-12 -translate-y-12"></div>
+                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-red group-hover:bg-white transform rotate-45 transition-colors duration-500 translate-x-12 -translate-y-12 group-hover:translate-x-0 group-hover:-translate-y-0 shadow-sm"></div>
                         <div class="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
-                            <i class="fa-solid fa-play text-brand-red text-[10px] animate-continuous-spin"></i>
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] animate-continuous-spin"></i>
                         </div>
                     </div>
 
@@ -570,9 +580,9 @@
 
                     <!-- Corner Triangle & Continuous Spinning Icon -->
                     <div class="absolute top-0 right-0 z-20 overflow-hidden w-12 h-12 pointer-events-none">
-                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-white transform rotate-45 transition-transform duration-500 group-hover:translate-x-0 group-hover:-translate-y-0 translate-x-12 -translate-y-12"></div>
+                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-red group-hover:bg-white transform rotate-45 transition-colors duration-500 translate-x-12 -translate-y-12 group-hover:translate-x-0 group-hover:-translate-y-0 shadow-sm"></div>
                         <div class="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
-                            <i class="fa-solid fa-play text-brand-red text-[10px] animate-continuous-spin"></i>
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] animate-continuous-spin"></i>
                         </div>
                     </div>
 
@@ -599,9 +609,9 @@
 
                     <!-- Corner Triangle & Continuous Spinning Icon -->
                     <div class="absolute top-0 right-0 z-20 overflow-hidden w-12 h-12 pointer-events-none">
-                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-white transform rotate-45 transition-transform duration-500 group-hover:translate-x-0 group-hover:-translate-y-0 translate-x-12 -translate-y-12"></div>
+                        <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-red group-hover:bg-white transform rotate-45 transition-colors duration-500 translate-x-12 -translate-y-12 group-hover:translate-x-0 group-hover:-translate-y-0 shadow-sm"></div>
                         <div class="absolute top-1.5 right-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
-                            <i class="fa-solid fa-play text-brand-red text-[10px] animate-continuous-spin"></i>
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] animate-continuous-spin"></i>
                         </div>
                     </div>
 
