@@ -150,6 +150,17 @@
 .hover-animate-card:hover img {
     transform: rotateY(360deg);
 }
+
+        /* Wave Animation for See More Button */
+  @keyframes waveBtn {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    50% { transform: rotate(8deg); }
+    75% { transform: rotate(-8deg); }
+  }
+  .hover-wave-btn:hover {
+    animation: waveBtn 0.5s ease-in-out infinite;
+  }
     </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased overflow-x-hidden">
@@ -478,63 +489,127 @@
                     </div>
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">We have 500+ Client in our Journey.</h2>
                 </div>
-                <a href="client-say.html" class="mt-4 md:mt-0 bg-brand-red text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition shadow">
+                <!-- See More Button with Wave Animation -->
+                <a href="client-say.html" class="mt-4 md:mt-0 bg-brand-red text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition shadow inline-block hover-wave-btn">
                     See More
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group hover-animate-card" data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                            <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Professor Dr. Altaf Uddin Ahmed</h4>
-                            <p class="text-xs text-gray-500 line-clamp-1">Superintendent of Islami Bank Hospital</p>
+                <!-- Card 1 -->
+                <div class="relative overflow-hidden bg-white p-6 shadow-sm hover:shadow-lg transition duration-500 group cursor-pointer z-10 border-t-4 border-transparent" data-aos="fade-up" data-aos-delay="0">
+                    <!-- Sweep Background -->
+                    <div class="absolute inset-y-0 left-0 w-0 bg-brand-red transition-all duration-500 ease-in-out group-hover:w-full z-0"></div>
+
+                    <!-- Corner Triangle & Spinning Icon -->
+                    <div class="absolute top-0 right-0 z-20">
+                        <div class="w-0 h-0 border-t-[45px] border-t-brand-red group-hover:border-t-white border-l-[45px] border-l-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-2 right-2 transition-transform duration-500 group-hover:rotate-180 origin-center">
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] transform -rotate-45"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"Since marketing is a compulsory subject in business, my suggestion is JDM agency. The Creativity and sincerity of the JDM agency impressed me."</p>
-                    <a href="https://youtu.be/kf13VMDXYZo?si=y_--IlUMnmhjVAqj" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 group-hover:text-white transition-colors duration-500 text-sm">Professor Dr. Altaf Uddin Ahmed</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-gray-100 transition-colors duration-500 line-clamp-1">Superintendent of Islami Bank Hospital</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 group-hover:text-white transition-colors duration-500 text-sm leading-relaxed mb-4">"Since marketing is a compulsory subject in business, my suggestion is JDM agency. The Creativity and sincerity of the JDM agency impressed me."</p>
+                        <a href="https://youtu.be/kf13VMDXYZo?si=y_--IlUMnmhjVAqj" class="text-brand-red group-hover:text-white transition-colors duration-500 text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group hover-animate-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                            <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Dr. A Z M Farhad</h4>
-                            <p class="text-xs text-gray-500 line-clamp-1">Chairman of Dr. Israt Jahan Hospital</p>
+
+                <!-- Card 2 -->
+                <div class="relative overflow-hidden bg-white p-6 shadow-sm hover:shadow-lg transition duration-500 group cursor-pointer z-10 border-t-4 border-transparent" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Sweep Background -->
+                    <div class="absolute inset-y-0 left-0 w-0 bg-brand-red transition-all duration-500 ease-in-out group-hover:w-full z-0"></div>
+
+                    <!-- Corner Triangle & Spinning Icon -->
+                    <div class="absolute top-0 right-0 z-20">
+                        <div class="w-0 h-0 border-t-[45px] border-t-brand-red group-hover:border-t-white border-l-[45px] border-l-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-2 right-2 transition-transform duration-500 group-hover:rotate-180 origin-center">
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] transform -rotate-45"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"I was looking for a trusted agency for marketing my company. Who can take all the responsibility of my company's marketing. Then I found..."</p>
-                    <a href="https://youtu.be/Dg2FMb1aZDM?si=U1qSl9xA_eJh-FHV" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 group-hover:text-white transition-colors duration-500 text-sm">Dr. A Z M Farhad</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-gray-100 transition-colors duration-500 line-clamp-1">Chairman of Dr. Israt Jahan Hospital</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 group-hover:text-white transition-colors duration-500 text-sm leading-relaxed mb-4">"I was looking for a trusted agency for marketing my company. Who can take all the responsibility of my company's marketing. Then I found..."</p>
+                        <a href="https://youtu.be/Dg2FMb1aZDM?si=U1qSl9xA_eJh-FHV" class="text-brand-red group-hover:text-white transition-colors duration-500 text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group hover-animate-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                            <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Dr. Nahal Mostak Khan</h4>
-                            <p class="text-xs text-gray-500 line-clamp-1">CEO of Mobile Eye Hospital Limited</p>
+
+                <!-- Card 3 -->
+                <div class="relative overflow-hidden bg-white p-6 shadow-sm hover:shadow-lg transition duration-500 group cursor-pointer z-10 border-t-4 border-transparent" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Sweep Background -->
+                    <div class="absolute inset-y-0 left-0 w-0 bg-brand-red transition-all duration-500 ease-in-out group-hover:w-full z-0"></div>
+
+                    <!-- Corner Triangle & Spinning Icon -->
+                    <div class="absolute top-0 right-0 z-20">
+                        <div class="w-0 h-0 border-t-[45px] border-t-brand-red group-hover:border-t-white border-l-[45px] border-l-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-2 right-2 transition-transform duration-500 group-hover:rotate-180 origin-center">
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] transform -rotate-45"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"I have been receiving the services of JDM Agency for a long time. I like their professionalism and sincerity. I wish their agency lives for a thousand years."</p>
-                    <a href="https://youtu.be/96OZdFx9of0?si=FDzxsJln4TeNmxTJ" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 group-hover:text-white transition-colors duration-500 text-sm">Dr. Nahal Mostak Khan</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-gray-100 transition-colors duration-500 line-clamp-1">CEO of Mobile Eye Hospital Limited</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 group-hover:text-white transition-colors duration-500 text-sm leading-relaxed mb-4">"I have been receiving the services of JDM Agency for a long time. I like their professionalism and sincerity. I wish their agency lives for a thousand years."</p>
+                        <a href="https://youtu.be/96OZdFx9of0?si=FDzxsJln4TeNmxTJ" class="text-brand-red group-hover:text-white transition-colors duration-500 text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                    </div>
                 </div>
-                <div class="bg-white p-6 shadow-sm hover:shadow-lg transition duration-300 border-t-4 border-transparent hover:border-brand-red group hover-animate-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                            <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 text-sm">Md. Miraj Khan</h4>
-                            <p class="text-xs text-gray-500 line-clamp-1">Unicare Health | CEO</p>
+
+                <!-- Card 4 -->
+                <div class="relative overflow-hidden bg-white p-6 shadow-sm hover:shadow-lg transition duration-500 group cursor-pointer z-10 border-t-4 border-transparent" data-aos="fade-up" data-aos-delay="300">
+                    <!-- Sweep Background -->
+                    <div class="absolute inset-y-0 left-0 w-0 bg-brand-red transition-all duration-500 ease-in-out group-hover:w-full z-0"></div>
+
+                    <!-- Corner Triangle & Spinning Icon -->
+                    <div class="absolute top-0 right-0 z-20">
+                        <div class="w-0 h-0 border-t-[45px] border-t-brand-red group-hover:border-t-white border-l-[45px] border-l-transparent transition-colors duration-500"></div>
+                        <div class="absolute top-2 right-2 transition-transform duration-500 group-hover:rotate-180 origin-center">
+                            <i class="fa-solid fa-play text-white group-hover:text-brand-red text-[10px] transform -rotate-45"></i>
                         </div>
                     </div>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">"The JDM agency has made a significant contribution to the level we have reached today. Especially the CEO of the company is very sincere..."</p>
-                    <a href="https://youtu.be/g6MHecpFFv8?si=nBeoUv7MF6gS3-II" class="text-brand-red text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+
+                    <!-- Content -->
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                                <img src="doctor.png" alt="Client" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 group-hover:text-white transition-colors duration-500 text-sm">Md. Miraj Khan</h4>
+                                <p class="text-xs text-gray-500 group-hover:text-gray-100 transition-colors duration-500 line-clamp-1">Unicare Health | CEO</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 group-hover:text-white transition-colors duration-500 text-sm leading-relaxed mb-4">"The JDM agency has made a significant contribution to the level we have reached today. Especially the CEO of the company is very sincere..."</p>
+                        <a href="https://youtu.be/g6MHecpFFv8?si=nBeoUv7MF6gS3-II" class="text-brand-red group-hover:text-white transition-colors duration-500 text-sm font-semibold group-hover:underline"><i class="fa-solid fa-play mr-1"></i> Video</a>
+                    </div>
                 </div>
             </div>
         </div>
