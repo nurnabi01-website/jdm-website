@@ -154,40 +154,49 @@
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased overflow-x-hidden">
 
-    <div class="bg-[#0b0d14] text-white text-[13px] border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center">
+    <!-- Top Bar -->
+    <div class="bg-[#0b0d14] text-white text-[12px] border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center h-[40px]">
             
+            <!-- Left Side -->
             <div class="flex items-stretch h-full">
-                <div class="flex items-center gap-3 py-3 pr-6">
-                    <i class="fa-solid fa-location-arrow text-brand-red text-lg"></i>
-                    <span class="w-[220px] leading-snug">H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span>
+                <!-- Location -->
+                <div class="flex items-center gap-2 pr-4">
+                    <i class="fa-solid fa-location-arrow text-brand-red text-sm"></i>
+                    <span class="w-[200px] leading-tight">H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span>
                 </div>
                 
+                <!-- Divider -->
                 <div class="w-[1px] bg-gray-700/60 hidden md:block"></div>
                 
-                <div class="flex items-center gap-3 py-3 pl-6 pr-6">
-                    <i class="fa-regular fa-envelope text-brand-red text-lg"></i>
-                    <span class="w-[150px] leading-snug break-words">Hello@jolshiridigital.com</span>
+                <!-- Email -->
+                <div class="flex items-center gap-2 pl-4 pr-4">
+                    <i class="fa-regular fa-envelope text-brand-red text-sm"></i>
+                    <span class="w-[150px] leading-tight break-words">Hello@jolshiridigital.com</span>
                 </div>
             </div>
             
+            <!-- Right Side -->
             <div class="flex items-stretch h-full">
-                <div class="flex items-center gap-2 py-3 pr-6 text-gray-200">
-                    <i class="fa-regular fa-clock text-brand-red text-lg"></i>
+                <!-- Time -->
+                <div class="flex items-center gap-2 pr-4 text-gray-200">
+                    <i class="fa-regular fa-clock text-brand-red text-sm"></i>
                     <span>Sat-Thu: 10.00am To 7.00pm</span>
                 </div>
                 
+                <!-- Divider -->
                 <div class="w-[1px] bg-gray-700/60 hidden md:block"></div>
                 
-                <div class="flex items-center gap-2 py-3 pl-6">
-                    <a href="https://www.facebook.com/jdmagencybd" class="group w-8 h-8 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
-                        <i class="fa-brands fa-facebook-f transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-sm"></i>
+                <!-- Socials -->
+                <div class="flex items-center gap-2 pl-4">
+                    <a href="https://www.facebook.com/jdmagencybd" class="group w-7 h-7 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
+                        <i class="fa-brands fa-facebook-f transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-xs"></i>
                     </a>
-                    <a href="https://www.youtube.com/@jdm.agency" class="group w-8 h-8 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
-                        <i class="fa-brands fa-youtube transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-sm"></i>
+                    <a href="https://www.youtube.com/@jdm.agency" class="group w-7 h-7 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
+                        <i class="fa-brands fa-youtube transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-xs"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/jdmagency/" class="group w-8 h-8 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
-                        <i class="fa-brands fa-linkedin-in transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-sm"></i>
+                    <a href="https://www.linkedin.com/in/jdmagency/" class="group w-7 h-7 flex items-center justify-center rounded-full transition-all duration-500 hover:bg-white text-white">
+                        <i class="fa-brands fa-linkedin-in transition-all duration-500 group-hover:[transform:rotateY(360deg)] group-hover:text-brand-red text-xs"></i>
                     </a>
                 </div>
             </div>
@@ -195,20 +204,24 @@
         </div>
     </div>
 
-    <nav class="bg-white py-4 shadow-sm sticky top-0 z-50">
+    <!-- Navigation Bar -->
+    <nav class="bg-white py-3 shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center">
             
-            <a href="index.html" class="flex items-center gap-3">
-                <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-10 w-auto object-contain">
-                <span class="font-bold text-[24px] text-gray-900 tracking-tight">JDM Agency</span>
+            <!-- Logo Area -->
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-9 w-auto object-contain">
+                <span class="font-semibold text-[22px] text-gray-900 tracking-normal">JDM Agency</span>
             </a>
 
+            <!-- Mobile Menu Button -->
             <button class="md:hidden text-2xl text-gray-800">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <div class="hidden md:flex items-center gap-7 font-bold text-[15px]">
-                <a href="index.html" class="text-brand-red border-b-[3px] border-brand-red pb-1">Home</a>
+            <!-- Nav Links -->
+            <div class="hidden md:flex items-center gap-6 font-semibold text-[14px]">
+                <a href="index.html" class="text-brand-red border-b-[2px] border-brand-red pb-1">Home</a>
                 <a href="client-say.html" class="text-gray-900 hover:text-brand-red transition">Client Say</a>
                 <a href="contact.html" class="text-gray-900 hover:text-brand-red transition">Contact</a>
                 <a href="happy-client.html" class="text-gray-900 hover:text-brand-red transition">Happy Client</a>
@@ -216,23 +229,27 @@
                 <a href="workflow.html" class="text-gray-900 hover:text-brand-red transition">Workflow</a>
             </div>
 
-            <div class="hidden lg:flex items-center gap-6">
-                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-6 py-2.5 rounded-full text-[15px] font-semibold flex items-center gap-2 shadow-md btn-whatsapp-animate">
+            <!-- Right Actions -->
+            <div class="hidden lg:flex items-center gap-5">
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-[14px] font-semibold flex items-center gap-2 shadow-md btn-whatsapp-animate">
                     <i class="fa-brands fa-whatsapp text-lg"></i> 
                     <span class="whatsapp-letters">
                         <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
                     </span>
                 </a>
                 
-                <div class="w-[1px] h-10 bg-gray-200"></div>
+                <!-- Divider -->
+                <div class="w-[1px] h-8 bg-gray-200"></div>
                 
+                <!-- Hotline -->
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white text-lg icon-ring-animate shadow-md shadow-red-200/50">
+                    <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base icon-ring-animate shadow-md shadow-red-200/50">
                         <i class="fa-solid fa-phone-volume"></i>
                     </div>
                     <div class="flex flex-col text-sm">
-                        <span class="text-gray-900 text-[11px] font-bold uppercase tracking-wider mb-[-4px]">Hotline</span>
-                        <span class="font-extrabold text-gray-900 text-[16px] tracking-tight">+88 01916-367602</span>
+                        <span class="text-gray-900 text-[10px] font-bold uppercase tracking-wider mb-[-4px]">Hotline</span>
+                        <span class="font-bold text-gray-900 text-[15px] tracking-tight">+88 01916-367602</span>
                     </div>
                 </div>
             </div>
