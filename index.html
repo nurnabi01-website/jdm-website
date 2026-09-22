@@ -179,6 +179,32 @@
   .animate-continuous-spin {
       animation: continuousRotate 2s linear infinite;
   }
+
+        /* Watch Video Ripple Animation */
+  .video-play-btn {
+      position: relative;
+      z-index: 10;
+  }
+  .video-play-btn::before,
+  .video-play-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background-color: #e52a2d; /* brand-red */
+      border-radius: 50%;
+      z-index: -1;
+      animation: ripplePulse 2s linear infinite;
+  }
+  .video-play-btn::after {
+      animation-delay: 1s;
+  }
+  @keyframes ripplePulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
+      100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+  }
     </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased overflow-x-hidden">
@@ -627,12 +653,12 @@
                     <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-8">
                         We'll Ensure You Always Get the <br> <span class="text-brand-red">Best Guidance.</span>
                     </h2>
-                    <a href="#" class="inline-flex items-center gap-3 text-white hover:text-brand-red transition">
-                        <div class="w-12 h-12 rounded-full border-2 border-brand-red flex items-center justify-center text-brand-red">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                        <span class="font-medium">Watch Video</span>
-                    </a>
+                    <a href="#" class="inline-flex items-center gap-3 text-white hover:text-brand-red transition group">
+    <div class="video-play-btn w-12 h-12 rounded-full bg-brand-red flex items-center justify-center text-white shadow-lg">
+        <i class="fa-solid fa-play"></i>
+    </div>
+    <span class="font-medium">Watch Video</span>
+</a>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" data-aos="fade-left">
