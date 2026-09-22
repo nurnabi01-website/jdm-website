@@ -620,33 +620,89 @@
             </div>
 
             <div>
-                <div class="border border-brand-red p-6 rounded bg-opacity-10 bg-brand-red">
-                    <h3 class="text-lg font-semibold text-white mb-2">For Free Consultancy</h3>
-                    <p class="text-xs text-gray-400 mb-4">Fields marked with an * are required</p>
-                    <form class="space-y-3 text-sm">
-                        <div>
-                            <label class="block text-gray-300 font-medium mb-1">Name *</label>
-                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
-                        </div>
-                        <div>
-                            <label class="block text-gray-300 font-medium mb-1">Company Name</label>
-                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
-                        </div>
-                        <div>
-                            <label class="block text-gray-300 font-medium mb-1">Phone *</label>
-                            <input type="text" class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red">
-                        </div>
-                        <div>
-                            <label class="block text-gray-300 font-medium mb-1">Location *</label>
-                            <select class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red appearance-none">
-                                <option>Select Location</option>
-                                <option>Dhaka</option>
-                                <option>Outside Dhaka</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="bg-gray-200 text-gray-900 px-6 py-2 rounded text-sm font-semibold hover:bg-white transition mt-2">Submit</button>
-                    </form>
-                </div>
+  <div class="border border-brand-red p-6 rounded bg-opacity-10 bg-brand-red">
+
+    <h3 class="text-lg font-semibold text-white mb-2">
+      For Free Consultancy
+    </h3>
+
+    <p class="text-gray-400 mb-4">
+      Fields marked with an <span class="text-brand-red">*</span> are required
+    </p>
+
+    <form class="space-y-3 text-sm">
+
+      <!-- Name -->
+      <div>
+        <label class="block text-gray-300 font-medium mb-1">
+          Name
+        </label>
+
+        <input
+          type="text"
+          class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red"
+        >
+      </div>
+
+      <!-- Company Name -->
+      <div>
+        <label class="block text-gray-300 font-medium mb-1">
+          Company Name
+        </label>
+
+        <input
+          type="text"
+          class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red"
+        >
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="block text-gray-300 font-medium mb-1">
+          Phone
+        </label>
+
+        <input
+          type="tel"
+          class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red"
+        >
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-gray-300 font-medium mb-1">
+          Location <span class="text-brand-red">*</span>
+        </label>
+
+        <select
+          required
+          class="w-full bg-[#1a1c23] border border-gray-700 rounded px-3 py-2 text-white focus:outline-none focus:border-brand-red appearance-none"
+        >
+          <option value="" selected disabled>
+            Select Location
+          </option>
+
+          <option value="Dhaka">Dhaka</option>
+          <option value="Chittagong">Chittagong</option>
+          <option value="Rajshahi">Rajshahi</option>
+          <option value="Sylhet">Sylhet</option>
+          <option value="Barisal">Barisal</option>
+          <option value="Khulna">Khulna</option>
+        </select>
+      </div>
+
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="bg-gray-200 text-gray-900 px-6 py-2 rounded text-sm font-semibold hover:bg-white transition mt-2"
+      >
+        Submit
+      </button>
+
+    </form>
+
+  </div>
+</div>
             </div>
         </div>
         
