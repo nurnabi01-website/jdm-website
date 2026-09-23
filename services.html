@@ -138,16 +138,16 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50">
+    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
             <!-- Logo -->
             <a href="index.html" class="flex items-center">
-    <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-16 w-auto object-contain -ml-3">
-    <span class="font-extrabold text-[22px] md:text-2xl text-gray-900 tracking-tight -ml-7 relative z-10">JDM Agency</span>
-</a>
+                <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-16 w-auto object-contain -ml-3">
+                <span class="font-extrabold text-[22px] md:text-2xl text-gray-900 tracking-tight -ml-7 relative z-10">JDM Agency</span>
+            </a>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-gray-800">
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none transition-transform duration-300">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
@@ -162,24 +162,52 @@
             </div>
 
             <!-- Right Actions -->
-<div class="hidden md:flex items-center gap-4">
-    <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-red-500/30 btn-whatsapp-animate">
-        <i class="fa-brands fa-whatsapp text-lg"></i>
-        <span class="whatsapp-letters">
-            <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
-        </span>
-    </a>
-    
-    <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
-        <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red icon-ring-animate">
-            <i class="fa-solid fa-phone-volume"></i>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-red-500/30 btn-whatsapp-animate">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="whatsapp-letters">
+                        <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
+                    </span>
+                </a>
+                
+                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red icon-ring-animate">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase leading-tight">Hotline</p>
+                        <p class="font-bold text-gray-900 text-sm leading-tight">+8801916-367602</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <p class="text-[10px] text-gray-500 font-bold uppercase leading-tight">Hotline</p>
-            <p class="font-bold text-gray-900 text-sm leading-tight">+8801916-367602</p>
-        </div>
-    </div>
-</div>
+
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50">
+            <div class="flex flex-col px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Home</a>
+                <a href="client-say.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Client Say</a>
+                <a href="contact.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Contact</a>
+                <a href="happy-client.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Happy Client</a>
+                <a href="services.html" class="block px-4 py-3 rounded-lg bg-red-50 text-brand-red font-semibold text-[15px]">Services</a>
+                <a href="workflow.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Workflow</a>
+                
+                <!-- Mobile WhatsApp & Hotline -->
+                <div class="pt-4 mt-2 border-t border-gray-100 flex flex-col gap-4">
+                    <a href="https://wa.me/+8801916367602" class="bg-brand-red text-white px-5 py-3 rounded-full text-center font-semibold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-[-2px]">Hotline</span>
+                            <span class="font-bold text-gray-900 text-[15px]">+88 01916-367602</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -370,6 +398,27 @@
             </div>
         </div>
     </footer>
+<!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
 
+            mobileMenuBtn.addEventListener('click', function() {
+                // Toggle the hidden class on the mobile menu
+                mobileMenu.classList.toggle('hidden');
+
+                // Change icon from hamburger to 'X' (cross) when open
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
