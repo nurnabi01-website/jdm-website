@@ -150,6 +150,50 @@
         @media (max-width: 991px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 576px) { .footer-grid { grid-template-columns: 1fr; } }
         }
+
+        /* ================= MOBILE MENU & FOOTER FIX CSS ================= */
+        .mobile-menu-btn { display: none; font-size: 24px; background: none; border: none; cursor: pointer; color: #111827; }
+        
+        @media (max-width: 991px) {
+            .mobile-menu-btn { display: block; }
+            .top-bar { display: none; } /* Space bachanot jonno mobile e top-bar hide kora holo */
+            .main-header { position: relative; }
+            .nav-wrapper {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 20px;
+                z-index: 999;
+                border-top: 1px solid #eee;
+            }
+            .nav-wrapper.active { display: flex; }
+            .nav-links { flex-direction: column; gap: 15px; width: 100%; }
+            .header-actions { flex-direction: column; align-items: flex-start; margin-top: 20px; gap: 15px; width: 100%; padding-top: 20px; border-top: 1px solid #eee; }
+        }
+
+        /* Let's Get In Touch Fix */
+        .waviy-text {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px; /* Word er majhe gap */
+            font-size: 50px;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: #ffffff;
+        }
+        .word-group {
+            display: inline-flex;
+            white-space: nowrap; /* Word ke majhkhan theke vangte dibe na */
+        }
+        @media (max-width: 768px) {
+            .waviy-text { font-size: 28px; gap: 10px; letter-spacing: 2px; }
+        }
     </style>
 </head>
 <body>
@@ -161,7 +205,7 @@
                 <div class="top-left">
                     <div class="info-item"><i class="fa-solid fa-location-arrow"></i><span>H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span></div>
                     <div class="divider"></div>
-                    <div class="info-item"><i class="fa-regular fa-envelope"></i><span>Hello@jolshiridigital.com<br>al.com</span></div>
+                    <div class="info-item"><i class="fa-regular fa-envelope"></i><span>Hello@jolshiridigital.com</span></div>
                 </div>
                 <div class="top-right">
                     <div class="info-item"><i class="fa-regular fa-clock"></i><span>Sat-Thu: 10.00am To 7.00pm</span></div>
@@ -175,35 +219,43 @@
             </div>
         </div>
         <div class="main-header">
-            <div class="container">
+            <div class="container" style="position: relative;">
                 <a href="index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; gap: 8px;">
-    <img src="jdm logo new 02.png" alt="JDM Agency Logo" style="height: 40px; width: auto; object-fit: contain; margin-left: -12px;">
-    <span style="font-weight: 800; font-size: 22px; color: #111827; letter-spacing: -0.5px; margin-left: -20px; position: relative; z-index: 10;">JDM Agency</span>
-</a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="client-say.html" class="active">Client Say</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                    <li><a href="happy-client.html">Happy Client</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="workflow.html">Workflow</a></li>
-                </ul>
-                <div class="header-actions">
-        <a href="https://wa.me/+8801916367602" class="btn-whatsapp btn-whatsapp-animate"><i class="fa-brands fa-whatsapp text-lg"></i>
-            <span class="whatsapp-letters">
-                <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
-            </span>
-        </a>
+                    <img src="jdm logo new 02.png" alt="JDM Agency Logo" style="height: 40px; width: auto; object-fit: contain; margin-left: -12px;">
+                    <span style="font-weight: 800; font-size: 22px; color: #111827; letter-spacing: -0.5px; margin-left: -20px; position: relative; z-index: 10;">JDM Agency</span>
+                </a>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
 
-        <div class="hotline-box">
-            <div class="hotline-icon icon-ring-animate"><i class="fa-solid fa-phone-volume"></i></div>
-            <div class="hotline-text"><span class="hotline-title">Hotline</span><span class="hotline-number">+88 01916-367602</span></div>
-        </div>
-    </div>
+                <!-- Navigation Wrapper -->
+                <div class="nav-wrapper" id="nav-wrapper">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="client-say.html" class="active">Client Say</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="happy-client.html">Happy Client</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="workflow.html">Workflow</a></li>
+                    </ul>
+                    <div class="header-actions">
+                        <a href="https://wa.me/+8801916367602" class="btn-whatsapp btn-whatsapp-animate"><i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span class="whatsapp-letters">
+                                <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
+                            </span>
+                        </a>
+
+                        <div class="hotline-box">
+                            <div class="hotline-icon icon-ring-animate"><i class="fa-solid fa-phone-volume"></i></div>
+                            <div class="hotline-text"><span class="hotline-title">Hotline</span><span class="hotline-number">+88 01916-367602</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-
     <!-- ================= PAGE BANNER ================= -->
     <section class="page-banner">
         <h1>Client Say</h1>
@@ -264,24 +316,36 @@
 
     <div class="waviy-wrapper">
         <div class="waviy-text">
-           <span style="--i:1;" class="text-red">L</span>
-           <span style="--i:2;">E</span>
-           <span style="--i:3;">T</span>
-           <span style="--i:4;">'</span>
-           <span style="--i:5;">S</span>
-           <span>&nbsp;&nbsp;</span>
-           <span style="--i:6;" class="text-orange">G</span>
-           <span style="--i:7;">E</span>
-           <span style="--i:8;">T</span>
-           <span>&nbsp;&nbsp;</span>
-           <span style="--i:9;">I</span>
-           <span style="--i:10;">N</span>
-           <span>&nbsp;&nbsp;</span>
-           <span style="--i:11;" class="text-red">T</span>
-           <span style="--i:12;">O</span>
-           <span style="--i:13;">U</span>
-           <span style="--i:14;">C</span>
-           <span style="--i:15;">H</span>
+            <!-- Word 1: LET'S -->
+            <div class="word-group">
+               <span style="--i:1;" class="text-red">L</span>
+               <span style="--i:2;">E</span>
+               <span style="--i:3;">T</span>
+               <span style="--i:4;">'</span>
+               <span style="--i:5;">S</span>
+            </div>
+            
+            <!-- Word 2: GET -->
+            <div class="word-group">
+               <span style="--i:6;" class="text-orange">G</span>
+               <span style="--i:7;">E</span>
+               <span style="--i:8;">T</span>
+            </div>
+            
+            <!-- Word 3: IN -->
+            <div class="word-group">
+               <span style="--i:9;">I</span>
+               <span style="--i:10;">N</span>
+            </div>
+            
+            <!-- Word 4: TOUCH -->
+            <div class="word-group">
+               <span style="--i:11;" class="text-red">T</span>
+               <span style="--i:12;">O</span>
+               <span style="--i:13;">U</span>
+               <span style="--i:14;">C</span>
+               <span style="--i:15;">H</span>
+            </div>
         </div>
     </div>
     <!-- End Let's Get In Touch -->
@@ -332,6 +396,26 @@
             <p>&copy; 2026 JDM Agency. All Rights Reserved. Designed by JDM.</p>
         </div>
     </footer>
+<!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navWrapper = document.getElementById('nav-wrapper');
+            const menuIcon = menuBtn.querySelector('i');
 
+            menuBtn.addEventListener('click', function() {
+                navWrapper.classList.toggle('active');
+                
+                // Icon change logic
+                if(navWrapper.classList.contains('active')) {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                } else {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
