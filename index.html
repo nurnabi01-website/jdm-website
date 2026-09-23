@@ -266,7 +266,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="bg-white py-3 shadow-sm sticky top-0 z-50">
+    <nav class="bg-white py-3 shadow-sm sticky top-0 z-50 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center">
             
             <!-- Logo Area -->
@@ -276,59 +276,41 @@
             </a>
 
             <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-gray-800">
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none transition-transform duration-300">
                 <i class="fa-solid fa-bars"></i>
             </button>
 
-            <!-- Nav Links -->
+            <!-- Desktop Nav Links -->
             <div class="hidden md:flex items-center gap-6 font-semibold text-[14px]">
-                
-                <!-- Home (Active) -->
                 <a href="index.html" class="text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[2px] after:bg-brand-red">H</span>ome
                 </a>
-                
-                <!-- Client Say -->
                 <a href="client-say.html" class="group text-gray-900 hover:text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 group-hover:after:w-full">C</span>lient Say
                 </a>
-                
-                <!-- Contact -->
                 <a href="contact.html" class="group text-gray-900 hover:text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 group-hover:after:w-full">C</span>ontact
                 </a>
-                
-                <!-- Happy Client -->
                 <a href="happy-client.html" class="group text-gray-900 hover:text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 group-hover:after:w-full">H</span>appy Client
                 </a>
-                
-                <!-- Services -->
                 <a href="services.html" class="group text-gray-900 hover:text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 group-hover:after:w-full">S</span>ervices
                 </a>
-                
-                <!-- Workflow -->
                 <a href="workflow.html" class="group text-gray-900 hover:text-brand-red transition-colors duration-300">
                     <span class="relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-brand-red after:transition-all after:duration-300 group-hover:after:w-full">W</span>orkflow
                 </a>
-                
             </div>
 
-            <!-- Right Actions -->
+            <!-- Right Actions (Desktop) -->
             <div class="hidden lg:flex items-center gap-5">
-                <!-- WhatsApp Button -->
                 <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-[14px] font-semibold flex items-center gap-2 shadow-md btn-whatsapp-animate">
                     <i class="fa-brands fa-whatsapp text-lg"></i> 
                     <span class="whatsapp-letters">
                         <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
                     </span>
                 </a>
-                
-                <!-- Divider -->
                 <div class="w-[1px] h-8 bg-gray-200"></div>
-                
-                <!-- Hotline -->
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base icon-ring-animate shadow-md shadow-red-200/50">
                         <i class="fa-solid fa-phone-volume"></i>
@@ -339,7 +321,34 @@
                     </div>
                 </div>
             </div>
-            
+        </div>
+
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50">
+            <div class="flex flex-col px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-4 py-3 rounded-lg bg-red-50 text-brand-red font-semibold text-[15px]">Home</a>
+                <a href="client-say.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Client Say</a>
+                <a href="contact.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Contact</a>
+                <a href="happy-client.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Happy Client</a>
+                <a href="services.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Services</a>
+                <a href="workflow.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Workflow</a>
+                
+                <!-- Mobile WhatsApp & Hotline -->
+                <div class="pt-4 mt-2 border-t border-gray-100 flex flex-col gap-4">
+                    <a href="https://wa.me/+8801916367602" class="bg-brand-red text-white px-5 py-3 rounded-full text-center font-semibold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-[-2px]">Hotline</span>
+                            <span class="font-bold text-gray-900 text-[15px]">+88 01916-367602</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </nav>
    <!-- ============================================== -->
@@ -990,6 +999,28 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+    });
+        </script>
+    <script>
+    // Mobile Menu Toggle Script
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            // Toggle the hidden class on the mobile menu
+            mobileMenu.classList.toggle('hidden');
+
+            // Change icon from hamburger to 'X' (cross) when open
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
         });
     });
 </script>
