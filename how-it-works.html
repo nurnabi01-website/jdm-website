@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - JDM Agency</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e52a2d',
+                            orange: '#f59e0b',
+                            dark: '#0d111d',
+                            darker: '#090b14',
+                            lightBg: '#f8f9fa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* WhatsApp Button Sequential Letter Spin Animation */
+        .btn-whatsapp-animate { perspective: 1000px; }
+        .btn-whatsapp-animate i { transition: transform 0.6s ease-in-out !important; }
+        .btn-whatsapp-animate .whatsapp-letters { display: inline-flex; gap: 1px; }
+        .btn-whatsapp-animate .letter { display: inline-block; transition: transform 0.6s ease-in-out !important; }
+        .btn-whatsapp-animate:hover .letter { transform: rotate(360deg) !important; }
+        .btn-whatsapp-animate .letter:nth-child(1) { transition-delay: 0.1s; }
+        .btn-whatsapp-animate .letter:nth-child(2) { transition-delay: 0.15s; }
+        .btn-whatsapp-animate .letter:nth-child(3) { transition-delay: 0.2s; }
+        .btn-whatsapp-animate .letter:nth-child(4) { transition-delay: 0.25s; }
+        .btn-whatsapp-animate .letter:nth-child(5) { transition-delay: 0.3s; }
+        .btn-whatsapp-animate .letter:nth-child(6) { transition-delay: 0.35s; }
+        .btn-whatsapp-animate .letter:nth-child(7) { transition-delay: 0.4s; }
+        .btn-whatsapp-animate .letter:nth-child(8) { transition-delay: 0.45s; }
+        .btn-whatsapp-animate:hover i { transform: rotate(360deg) !important; }
+
+        /* Hotline Phone Ringing Animation */
+        @keyframes phoneRing {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(15deg); }
+            40% { transform: rotate(-15deg); }
+            50% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .icon-ring-animate { animation: phoneRing 1.5s infinite ease-in-out; }
+        
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden;}
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090b14; }
+        ::-webkit-scrollbar-thumb { background: #e52a2d; border-radius: 4px; }
+        
+        /* Wave Text Animation */
+        .waviy-text span {
+            position: relative;
+            display: inline-block;
+            animation: waveBounce 2s infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+        @keyframes waveBounce {
+            0%, 40%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-15px); }
+        }
+
+        /* Fixed Full-Card Hover Animation with Image Support */
+        .feature-card {
+            transition: all 0.4s ease-in-out;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        .feature-card-content {
+            transition: all 0.4s ease-in-out;
+        }
+        .feature-card * {
+            transition: color 0.4s ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(229, 42, 45, 0.3);
+            border-color: #e52a2d !important;
+        }
+        .feature-card:hover .feature-card-content {
+            background-color: #e52a2d !important;
+        }
+        .feature-card:hover h3, 
+        .feature-card:hover p, 
+        .feature-card:hover i,
+        .feature-card:hover .step-number {
+            color: #ffffff !important;
+        }
+        .step-number {
+            transition: color 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-brand-lightBg text-gray-800 antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-gray-800">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-arrow text-brand-red"></i>
+                <span>H#5, (Rajuk Project), Sector # 18, Uttara, Dhaka, Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-envelope text-brand-red"></i>
+                <span>Hello@jolshiridigital.com</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-regular fa-clock text-brand-red"></i>
+                <span>Sat-Thu: 10:00am To 7:00pm</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://www.facebook.com/jdmagencybd" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@jdm.agency" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/jdmagency/" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-16 w-auto object-contain -ml-3">
+                <span class="font-extrabold text-[22px] md:text-2xl text-gray-900 tracking-tight -ml-7 relative z-10">JDM Agency</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none transition-transform duration-300">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-brand-red transition">Home</a>
+                <a href="client-say.html" class="text-gray-600 hover:text-brand-red transition">Client Say</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brand-red transition">Contact</a>
+                <a href="happy-client.html" class="text-gray-600 hover:text-brand-red transition">Happy Client</a>
+                <a href="services.html" class="text-gray-600 hover:text-brand-red transition">Services</a>
+                <a href="workflow.html" class="text-brand-red border-b-2 border-brand-red pb-1">Workflow</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-red-500/30 btn-whatsapp-animate">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="whatsapp-letters">
+                        <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
+                    </span>
+                </a>
+                
+                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red icon-ring-animate">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase leading-tight">Hotline</p>
+                        <p class="font-bold text-gray-900 text-sm leading-tight">+8801916-367602</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50">
+            <div class="flex flex-col px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Home</a>
+                <a href="client-say.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Client Say</a>
+                <a href="contact.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Contact</a>
+                <a href="happy-client.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Happy Client</a>
+                <a href="services.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Services</a>
+                <a href="workflow.html" class="block px-4 py-3 rounded-lg bg-red-50 text-brand-red font-semibold text-[15px]">Workflow</a>
+                
+                <div class="pt-4 mt-2 border-t border-gray-100 flex flex-col gap-4">
+                    <a href="https://wa.me/+8801916367602" class="bg-brand-red text-white px-5 py-3 rounded-full text-center font-semibold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-[-2px]">Hotline</span>
+                            <span class="font-bold text-gray-900 text-[15px]">+88 01916-367602</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="relative bg-brand-dark py-24 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
+        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+        
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="absolute w-16 h-16 bg-brand-red rounded-full -z-10 left-[-10px] top-[-5px] opacity-90 blur-[2px]"></div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">How It Works</h1>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-brand-red transition">Home</a>
+                <span>/</span>
+                <span class="text-brand-red">How It Works</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Intro / Value Proposition Section -->
+    <section class="pt-20 pb-12 px-4 md:px-8 bg-brand-lightBg">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-3 py-1 bg-red-50 text-brand-red text-xs font-bold rounded-full mb-6 tracking-widest uppercase border border-red-100">
+                The JDM Advantage
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                Why Build an In-House Team When You Can Have <span class="text-brand-red">an Entire Agency?</span>
+            </h2>
+            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                Hiring an in-house marketing department with planners, creators, videographers, and ad experts is incredibly expensive and difficult to manage. At JDM Agency, we solve this by providing a powerhouse of <strong>8 specialized teams</strong> working together flawlessly. We deliver comprehensive, high-quality monthly marketing support for your business at a fraction of the cost. Here is how our 8-tier workflow turns your vision into reality:
+            </p>
+        </div>
+    </section>
+
+    <!-- The 8 Teams / Workflow Process Section with Premium Images -->
+    <section class="pb-20 px-4 md:px-8 bg-brand-lightBg">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <!-- Step 1: Research -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Research Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">01</div>
+                    <i class="fa-solid fa-magnifying-glass-chart text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Expert Research</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Our dedicated research team analyzes your business inside out, gathering top-to-bottom data to build highly compatible marketing strategies for your niche.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Planning -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Planning Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">02</div>
+                    <i class="fa-solid fa-clipboard-list text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Strategic Planning</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Based on solid research, our planning team formulates a comprehensive, month-by-month marketing roadmap tailored to achieve your specific business goals.</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Campaign Design -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Campaign Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">03</div>
+                    <i class="fa-solid fa-bullhorn text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Ad Campaign Design</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Our professional ad campaign team takes the strategy and conceptualizes highly engaging, creative campaigns designed to captivate your target audience.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Photography -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Photography Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">04</div>
+                    <i class="fa-solid fa-camera-retro text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Commercial Photography</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Our specialized photography team conducts high-quality photoshoots for your products or promotional materials to ensure visually stunning content.</p>
+                </div>
+            </div>
+
+            <!-- Step 5: Videography -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Videography Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">05</div>
+                    <i class="fa-solid fa-video text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Professional Shooting</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Using state-of-the-art professional gear, our shooting team expertly captures and directs cinematic video content matching the campaign's vision.</p>
+                </div>
+            </div>
+
+            <!-- Step 6: Production -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Production Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">06</div>
+                    <i class="fa-solid fa-calendar-check text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Production Management</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Our production team finalizes the content and manages the upload schedules across all social media platforms, ensuring consistent online presence.</p>
+                </div>
+            </div>
+
+            <!-- Step 7: Ads Management -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ads Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">07</div>
+                    <i class="fa-solid fa-bullseye text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">Meta & Google Ads</h3>
+                    <p class="text-sm text-gray-500 relative z-10">Our expert ads team configures precision-targeted boosting and ad placements so that your promotions reach exactly the right audience with maximum ROI.</p>
+                </div>
+            </div>
+
+            <!-- Step 8: Support -->
+            <div class="feature-card rounded-xl border border-gray-200 relative overflow-hidden group shadow-sm hover:shadow-xl">
+                <div class="h-48 w-full overflow-hidden shrink-0 relative">
+                    <div class="absolute inset-0 bg-brand-dark/20 z-10 group-hover:bg-brand-red/10 transition-colors duration-500"></div>
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Support Team" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <div class="feature-card-content p-8 relative flex-grow bg-white">
+                    <div class="step-number text-6xl font-black text-gray-100 absolute -top-4 -right-2 z-0 opacity-60">08</div>
+                    <i class="fa-solid fa-headset text-3xl text-brand-red mb-4 relative z-10"></i>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3 relative z-10">24/7 Helpline Team</h3>
+                    <p class="text-sm text-gray-500 relative z-10">We never leave you hanging. Our expert helpline team is available 24/7, ready to solve any issues and provide seamless, continuous client support.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Let's Get In Touch Pre-Footer Banner -->
+    <section class="bg-brand-darker py-20 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            
+            <div class="waviy-text flex flex-wrap justify-center items-center gap-x-3 gap-y-2 md:gap-5 text-[28px] sm:text-4xl md:text-6xl font-extrabold tracking-wider mb-8">
+                <!-- Word 1: LET'S -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:1;" class="text-brand-red">L</span>
+                   <span style="--i:2;" class="text-brand-red">E</span>
+                   <span style="--i:3;" class="text-brand-red">T</span>
+                   <span style="--i:4;" class="text-brand-red">'</span>
+                   <span style="--i:5;" class="text-brand-red">S</span>
+                </div>
+                
+                <!-- Word 2: GET -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:6;" class="text-brand-red">G</span>
+                   <span style="--i:7;" class="text-brand-red">E</span>
+                   <span style="--i:8;" class="text-brand-red">T</span>
+                </div>
+                
+                <!-- Word 3: IN -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:9;" class="text-white">I</span>
+                   <span style="--i:10;" class="text-white">N</span>
+                </div>
+                
+                <!-- Word 4: TOUCH -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:11;" class="text-brand-orange">T</span>
+                   <span style="--i:12;" class="text-brand-orange">O</span>
+                   <span style="--i:13;" class="text-brand-orange">U</span>
+                   <span style="--i:14;" class="text-brand-orange">C</span>
+                   <span style="--i:15;" class="text-brand-orange">H</span>
+                </div>
+            </div>
+            
+            <div class="mt-8 max-w-4xl mx-auto h-[1px] bg-brand-red/30 relative">
+                <div class="absolute left-0 top-0 h-[1px] w-1/4 bg-brand-red"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-dark pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+                
+                <!-- Column 1: Contact Info -->
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Contact</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>+8801916-367602</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>Hello@jolshiridigital.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>Head Office # 14th Floor, House: 05, Sector: 18, Uttara, Dhaka, Bangladesh</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 flex items-center gap-4">
+                        <span class="text-white text-sm font-medium underline underline-offset-4 decoration-brand-red">Follow:</span>
+                        <div class="flex gap-3 text-gray-400 text-sm">
+                            <a href="https://www.facebook.com/jdmagencybd" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/jdmagency/" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/jolshiridigital" class="hover:text-brand-red transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://x.com/JDMAgency" class="hover:text-brand-red transition"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/@jdm.agency" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/@jdmagency" class="hover:text-brand-red transition"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Quick Links</h3>
+                    <div class="w-8 h-[2px] bg-brand-red mb-6"></div>
+                    
+                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-400 mb-8">
+                        <a href="company.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Company
+                        </a>
+                        <a href="how-it-works.html" class="flex items-center gap-2 text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> How It's Work
+                        </a>
+                        <a href="services.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Service
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Case Studies
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Pricing
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Privacy Policy
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Support
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Press media
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Careers
+                        </a>
+                        <a href="contact.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Contact
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Consultancy Form -->
+                <div>
+                    <div class="border border-brand-red p-6 rounded bg-brand-darker relative">
+                        <h3 class="text-white text-xl font-bold mb-1">For Free Consultancy</h3>
+                        <p class="text-xs text-gray-500 mb-6">Fields marked with an <span class="text-brand-red">*</span> are required</p>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Name <span class="text-brand-red">*</span></label>
+                                <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Company Name</label>
+                                <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Phone <span class="text-brand-red">*</span></label>
+                                <input type="tel" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Location <span class="text-brand-red">*</span></label>
+                                <select class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition appearance-none rounded-sm" required>
+                                    <option value="" disabled selected>Select location</option>
+                                    <option value="dhaka">Dhaka, Bangladesh</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="button" class="bg-gray-300 hover:bg-white transition text-black font-semibold text-xs py-2 px-6 rounded-sm mt-2">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500 text-xs">Copyright © 2026 | JDM Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.classList.remove('fa-xmark');
+                    menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
