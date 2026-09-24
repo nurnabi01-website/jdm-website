@@ -198,64 +198,104 @@
 </head>
 <body>
 
-    <!-- ================= HEADER ================= -->
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <div class="top-left">
-                    <div class="info-item"><i class="fa-solid fa-location-arrow"></i><span>H#5, (Rajuk Project), Sector # 18, Uttara,<br>Dhaka, Bangladesh</span></div>
-                    <div class="divider"></div>
-                    <div class="info-item"><i class="fa-regular fa-envelope"></i><span>Hello@jolshiridigital.com</span></div>
-                </div>
-                <div class="top-right">
-                    <div class="info-item"><i class="fa-regular fa-clock"></i><span>Sat-Thu: 10.00am To 7.00pm</span></div>
-                    <div class="divider"></div>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/jdmagencybd"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.youtube.com/@jdm.agency"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.linkedin.com/in/jdmagency/"><i class="fa-brands fa-linkedin-in"></i></a>
+    <!-- Top Bar -->
+    <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-gray-800">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-location-arrow text-brand-red"></i>
+                <span>H#5, (Rajuk Project), Sector # 18, Uttara, Dhaka, Bangladesh</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <i class="fa-regular fa-envelope text-brand-red"></i>
+                <span>Hello@jolshiridigital.com</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-gray-300">
+                <i class="fa-regular fa-clock text-brand-red"></i>
+                <span>Sat-Thu: 10:00am To 7:00pm</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="https://www.facebook.com/jdmagencybd" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@jdm.agency" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/in/jdmagency/" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-white py-4 px-4 md:px-8 shadow-sm sticky top-0 z-50 relative">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center">
+                <img src="jdm logo new 02.png" alt="JDM Agency Logo" class="h-16 w-auto object-contain -ml-3">
+                <span class="font-extrabold text-[22px] md:text-2xl text-gray-900 tracking-tight -ml-7 relative z-10">JDM Agency</span>
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 focus:outline-none transition-transform duration-300">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Links (Client Say is Active) -->
+            <div class="hidden md:flex items-center gap-6 font-medium text-sm">
+                <a href="index.html" class="text-gray-600 hover:text-brand-red transition">Home</a>
+                <a href="client-say.html" class="text-brand-red border-b-2 border-brand-red pb-1">Client Say</a>
+                <a href="contact.html" class="text-gray-600 hover:text-brand-red transition">Contact</a>
+                <a href="happy-client.html" class="text-gray-600 hover:text-brand-red transition">Happy Client</a>
+                <a href="services.html" class="text-gray-600 hover:text-brand-red transition">Services</a>
+                <a href="workflow.html" class="text-gray-600 hover:text-brand-red transition">Workflow</a>
+            </div>
+
+            <!-- Right Actions -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://wa.me/+8801916367602" class="bg-brand-red hover:bg-red-700 transition text-white px-5 py-2 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-red-500/30 btn-whatsapp-animate">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span class="whatsapp-letters">
+                        <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
+                    </span>
+                </a>
+                
+                <div class="flex items-center gap-2 border-l border-gray-200 pl-4">
+                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brand-red icon-ring-animate">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-gray-500 font-bold uppercase leading-tight">Hotline</p>
+                        <p class="font-bold text-gray-900 text-sm leading-tight">+8801916-367602</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="main-header">
-            <div class="container" style="position: relative;">
-                <a href="index.html" class="logo-link" style="display: flex; align-items: center; text-decoration: none; gap: 8px;">
-                    <img src="jdm logo new 02.png" alt="JDM Agency Logo" style="height: 40px; width: auto; object-fit: contain; margin-left: -12px;">
-                    <span style="font-weight: 800; font-size: 22px; color: #111827; letter-spacing: -0.5px; margin-left: -20px; position: relative; z-index: 10;">JDM Agency</span>
-                </a>
+
+        <!-- Mobile Menu Dropdown (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 z-50">
+            <div class="flex flex-col px-4 py-4 space-y-2">
+                <a href="index.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Home</a>
+                <a href="client-say.html" class="block px-4 py-3 rounded-lg bg-red-50 text-brand-red font-semibold text-[15px]">Client Say</a>
+                <a href="contact.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Contact</a>
+                <a href="happy-client.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Happy Client</a>
+                <a href="services.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Services</a>
+                <a href="workflow.html" class="block px-4 py-3 rounded-lg text-gray-800 font-medium hover:bg-red-50 hover:text-brand-red transition-colors text-[15px]">Workflow</a>
                 
-                <!-- Mobile Menu Button -->
-                <button class="mobile-menu-btn" id="mobile-menu-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-
-                <!-- Navigation Wrapper -->
-                <div class="nav-wrapper" id="nav-wrapper">
-                    <ul class="nav-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="client-say.html" class="active">Client Say</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="happy-client.html">Happy Client</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="workflow.html">Workflow</a></li>
-                    </ul>
-                    <div class="header-actions">
-                        <a href="https://wa.me/+8801916367602" class="btn-whatsapp btn-whatsapp-animate"><i class="fa-brands fa-whatsapp text-lg"></i>
-                            <span class="whatsapp-letters">
-                                <span class="letter">W</span><span class="letter">h</span><span class="letter">a</span><span class="letter">t</span><span class="letter">s</span><span class="letter">A</span><span class="letter">p</span><span class="letter">p</span>
-                            </span>
-                        </a>
-
-                        <div class="hotline-box">
-                            <div class="hotline-icon icon-ring-animate"><i class="fa-solid fa-phone-volume"></i></div>
-                            <div class="hotline-text"><span class="hotline-title">Hotline</span><span class="hotline-number">+88 01916-367602</span></div>
+                <!-- Mobile WhatsApp & Hotline -->
+                <div class="pt-4 mt-2 border-t border-gray-100 flex flex-col gap-4">
+                    <a href="https://wa.me/+8801916367602" class="bg-brand-red text-white px-5 py-3 rounded-full text-center font-semibold flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+                    </a>
+                    <div class="flex items-center gap-3 px-2">
+                        <div class="w-9 h-9 rounded-full bg-brand-red flex items-center justify-center text-white text-base">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="flex flex-col text-sm">
+                            <span class="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-[-2px]">Hotline</span>
+                            <span class="font-bold text-gray-900 text-[15px]">+88 01916-367602</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
     <!-- ================= PAGE BANNER ================= -->
     <section class="page-banner">
         <h1>Client Say</h1>
