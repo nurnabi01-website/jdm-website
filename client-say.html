@@ -8,37 +8,41 @@
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Tailwind CSS (Fixed Missing Tailwind Script) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e52a2d',
+                            orange: '#f59e0b',
+                            dark: '#0d111d',
+                            darker: '#090b14',
+                            lightBg: '#f8f9fa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
         /* WhatsApp Button Sequential Letter Spin Animation */
-        .btn-whatsapp-animate {
-            perspective: 1000px;
-        }
-        .btn-whatsapp-animate i {
-            transition: transform 0.6s ease-in-out !important;
-        }
-        /* Target the letters container */
-        .btn-whatsapp-animate .whatsapp-letters {
-            display: inline-flex;
-            gap: 1px; /* অক্ষরগুলোর মাঝে হালকা একটু ফাঁকা রাখার জন্য */
-        }
-        
-        /* Sequential spin effect for each letter span */
-        .btn-whatsapp-animate .letter {
-            display: inline-block;
-            transition: transform 0.6s ease-in-out !important;
-        }
-
-        /* Apply 360-degree rotation to each letter on hover */
-        .btn-whatsapp-animate:hover .letter {
-            transform: rotate(360deg) !important;
-        }
-
-        /* Add sequential transition delays for each of the 8 letters */
+        .btn-whatsapp-animate { perspective: 1000px; }
+        .btn-whatsapp-animate i { transition: transform 0.6s ease-in-out !important; }
+        .btn-whatsapp-animate .whatsapp-letters { display: inline-flex; gap: 1px; }
+        .btn-whatsapp-animate .letter { display: inline-block; transition: transform 0.6s ease-in-out !important; }
+        .btn-whatsapp-animate:hover .letter { transform: rotate(360deg) !important; }
         .btn-whatsapp-animate .letter:nth-child(1) { transition-delay: 0.1s; }
         .btn-whatsapp-animate .letter:nth-child(2) { transition-delay: 0.15s; }
         .btn-whatsapp-animate .letter:nth-child(3) { transition-delay: 0.2s; }
@@ -47,156 +51,43 @@
         .btn-whatsapp-animate .letter:nth-child(6) { transition-delay: 0.35s; }
         .btn-whatsapp-animate .letter:nth-child(7) { transition-delay: 0.4s; }
         .btn-whatsapp-animate .letter:nth-child(8) { transition-delay: 0.45s; }
+        .btn-whatsapp-animate:hover i { transform: rotate(360deg) !important; }
 
-        /* The icon still spins as a block */
-        .btn-whatsapp-animate:hover i {
-            transform: rotate(360deg) !important;
+        /* Hotline Phone Ringing Animation */
+        @keyframes phoneRing {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(15deg); }
+            40% { transform: rotate(-15deg); }
+            50% { transform: rotate(0deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .icon-ring-animate { animation: phoneRing 1.5s infinite ease-in-out; }
+        
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #090b14; }
+        ::-webkit-scrollbar-thumb { background: #e52a2d; border-radius: 4px; }
+        
+        /* Wave Text Animation */
+        .waviy-text span {
+            position: relative;
+            display: inline-block;
+            animation: waveBounce 2s infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+        @keyframes waveBounce {
+            0%, 40%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-15px); }
         }
 
-  /* Hotline Phone Ringing Animation */
-  @keyframes phoneRing {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(15deg); }
-    20% { transform: rotate(-15deg); }
-    30% { transform: rotate(15deg); }
-    40% { transform: rotate(-15deg); }
-    50% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
-  }
-  .icon-ring-animate {
-    animation: phoneRing 1.5s infinite ease-in-out;
-  }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f3f4f6; }
-
-        /* ================= HEADER CSS ================= */
-        .top-bar { background-color: #0B1120; color: #ffffff; padding: 10px 0; font-size: 13px; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-        .top-left, .top-right { display: flex; align-items: center; gap: 20px; }
-        .info-item { display: flex; align-items: center; gap: 10px; line-height: 1.4; }
-        .info-item i { color: #e50000; font-size: 16px; }
-        .divider { width: 1px; height: 30px; background-color: rgba(255, 255, 255, 0.1); margin: 0 10px; }
-        .social-icons { display: flex; gap: 15px; }
-        .social-icons a { color: #ffffff; text-decoration: none; font-size: 14px; transition: color 0.3s; }
-        .social-icons a:hover { color: #e50000; }
-        .main-header { background-color: #ffffff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); padding: 15px 0; }
-        .main-header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #000; }
-        .logo-text { font-size: 24px; font-weight: 700; color: #111827; }
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links li a { text-decoration: none; color: #111827; font-weight: 500; font-size: 15px; padding-bottom: 5px; transition: color 0.3s; }
-        .nav-links li a:hover { color: #e50000; }
-        .nav-links li a.active { color: #e50000; border-bottom: 2px solid #e50000; }
-        .header-actions { display: flex; align-items: center; gap: 20px; }
-        .btn-whatsapp { background-color: #e50000; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 30px; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 8px; transition: background 0.3s; }
-        .btn-whatsapp:hover { background-color: #cc0000; }
-        .hotline-box { display: flex; align-items: center; gap: 12px; }
-        .hotline-icon { background-color: #e50000; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px; }
-        .hotline-text { display: flex; flex-direction: column; }
-        .hotline-title { font-size: 12px; color: #6b7280; font-weight: 500; line-height: 1; margin-bottom: 4px; }
-        .hotline-number { font-size: 16px; font-weight: 700; color: #111827; line-height: 1; }
-
-        /* ================= PAGE BANNER CSS ================= */
-        .page-banner {
-            background-color: #111; /* ছবির বদলে কালো ব্যাকগ্রাউন্ড দিলাম */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1920x400');
-            background-size: cover;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-        }
-        .page-banner h1 { font-size: 40px; margin-bottom: 10px; }
-        .page-banner p { font-size: 16px; }
-        .page-banner p a { color: #e50000; text-decoration: none; font-weight: 600;}
-
-        /* ================= VIDEO GALLERY CSS ================= */
-        .video-gallery { padding: 60px 0; }
-        .gallery-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .featured-video { margin-bottom: 40px; width: 100%; }
-        .featured-video iframe { width: 100%; height: 500px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: none; }
-        .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .video-item { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        /* Video Gallery CSS (Tailwind converted to custom where needed) */
+        .video-item { transition: transform 0.3s; }
         .video-item:hover { transform: translateY(-5px); }
-        .video-item iframe { width: 100%; height: 250px; border: none; }
-        
-        @media (max-width: 768px) {
-            .video-grid { grid-template-columns: 1fr; }
-            .featured-video iframe { height: 300px; }
-        }
-
-        /* ================= FOOTER CSS ================= */
-        .footer-section { background-color: #0B1120; color: #d1d5db; padding-top: 80px; }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 60px; max-width: 1400px; margin-left: auto; margin-right: auto; padding: 0 20px;}
-        .footer-logo { margin-bottom: 20px; display: flex; align-items: center; text-decoration: none; }
-        .footer-desc { line-height: 1.8; margin-bottom: 25px; font-size: 15px; }
-        .footer-social { display: flex; gap: 15px; }
-        .footer-social a { display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: rgba(255,255,255,0.05); color: #ffffff; border-radius: 50%; text-decoration: none; transition: 0.3s; }
-        .footer-social a:hover { background-color: #e50000; }
-        .footer-col h3 { color: #ffffff; font-size: 20px; margin-bottom: 25px; position: relative; padding-bottom: 10px; }
-        .footer-col h3::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 2px; background-color: #e50000; }
-        .footer-links, .footer-contact { list-style: none; }
-        .footer-links li, .footer-contact li { margin-bottom: 15px; }
-        .footer-links a { color: #d1d5db; text-decoration: none; transition: 0.3s; display: inline-block; }
-        .footer-links a:hover { color: #e50000; transform: translateX(5px); }
-        .footer-contact li { display: flex; gap: 15px; line-height: 1.6; }
-        .footer-contact i { color: #e50000; margin-top: 4px; }
-        .copyright-area { background-color: #060913; padding: 20px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-        .copyright-area p { font-size: 14px; color: #9ca3af; }
-        @media (max-width: 991px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 576px) { .footer-grid { grid-template-columns: 1fr; } }
-        }
-
-        /* ================= MOBILE MENU & FOOTER FIX CSS ================= */
-        .mobile-menu-btn { display: none; font-size: 24px; background: none; border: none; cursor: pointer; color: #111827; }
-        
-        @media (max-width: 991px) {
-            .mobile-menu-btn { display: block; }
-            .top-bar { display: none; } /* Space bachanot jonno mobile e top-bar hide kora holo */
-            .main-header { position: relative; }
-            .nav-wrapper {
-                display: none; 
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #ffffff;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                padding: 20px;
-                z-index: 999;
-                border-top: 1px solid #eee;
-            }
-            .nav-wrapper.active { display: flex; }
-            .nav-links { flex-direction: column; gap: 15px; width: 100%; }
-            .header-actions { flex-direction: column; align-items: flex-start; margin-top: 20px; gap: 15px; width: 100%; padding-top: 20px; border-top: 1px solid #eee; }
-        }
-
-        /* Let's Get In Touch Fix */
-        .waviy-text {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px; /* Word er majhe gap */
-            font-size: 50px;
-            font-weight: 800;
-            letter-spacing: 5px;
-            color: #ffffff;
-        }
-        .word-group {
-            display: inline-flex;
-            white-space: nowrap; /* Word ke majhkhan theke vangte dibe na */
-        }
-        @media (max-width: 768px) {
-            .waviy-text { font-size: 28px; gap: 10px; letter-spacing: 2px; }
-        }
     </style>
 </head>
-<body>
+<body class="bg-brand-lightBg text-gray-800 antialiased">
 
     <!-- Top Bar -->
     <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2 border-b border-gray-800">
@@ -296,166 +187,235 @@
             </div>
         </div>
     </nav>
-    <!-- ================= PAGE BANNER ================= -->
-    <section class="page-banner">
-        <h1>Client Say</h1>
-        <p><a href="index.html">Home</a> / Client Say</p>
-    </section>
 
-    <!-- ================= VIDEO GALLERY ================= -->
-    <section class="video-gallery">
-        <div class="gallery-container">
+    <!-- Page Header (Client Say) -->
+    <div class="relative bg-brand-dark py-24 text-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center mix-blend-overlay opacity-30"></div>
+        <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
+        
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="absolute w-16 h-16 bg-brand-red rounded-full -z-10 left-[-10px] top-[-5px] opacity-90 blur-[2px]"></div>
             
-            <!-- Featured Video -->
-        <div class="featured-video">
-            <iframe src="https://www.youtube.com/embed/kf13VMDXYZo" title="YouTube video player" allowfullscreen></iframe>
-        </div>
-
-        <!-- Video Grid -->
-        <div class="video-grid">
-            <div class="video-item"><iframe src="https://www.youtube.com/embed/xZhxg4jNLvM" allowfullscreen></iframe></div>
-            <div class="video-item"><iframe src="https://www.youtube.com/embed/zBk54BDpiWs" allowfullscreen></iframe></div>
-            <div class="video-item"><iframe src="https://www.youtube.com/embed/Dg2FMb1aZDM" allowfullscreen></iframe></div>
-            <div class="video-item"><iframe src="https://www.youtube.com/embed/96OZdFx9of0" allowfullscreen></iframe></div>
-        </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer-section">
-        <!-- Let's Get In Touch Animation -->
-    <style>
-      .waviy-wrapper {
-          text-align: center;
-          padding: 40px 0 20px 0;
-          width: 100%;
-          display: block;
-      }
-      .waviy-text {
-          font-size: 50px;
-          font-weight: 800;
-          letter-spacing: 5px;
-          color: #ffffff;
-      }
-      @media (max-width: 768px) {
-          .waviy-text { font-size: 30px; }
-      }
-      .waviy-text span {
-          position: relative;
-          display: inline-block;
-          animation: waveBounce 2s infinite;
-          animation-delay: calc(0.1s * var(--i));
-      }
-      .text-red { color: #e52a2d; }
-      .text-orange { color: #f59e0b; }
-      
-      @keyframes waveBounce {
-        0%, 40%, 100% { transform: translateY(0); }
-        20% { transform: translateY(-15px); }
-      }
-    </style>
-
-    <div class="waviy-wrapper">
-        <div class="waviy-text">
-            <!-- Word 1: LET'S -->
-            <div class="word-group">
-               <span style="--i:1;" class="text-red">L</span>
-               <span style="--i:2;">E</span>
-               <span style="--i:3;">T</span>
-               <span style="--i:4;">'</span>
-               <span style="--i:5;">S</span>
-            </div>
-            
-            <!-- Word 2: GET -->
-            <div class="word-group">
-               <span style="--i:6;" class="text-orange">G</span>
-               <span style="--i:7;">E</span>
-               <span style="--i:8;">T</span>
-            </div>
-            
-            <!-- Word 3: IN -->
-            <div class="word-group">
-               <span style="--i:9;">I</span>
-               <span style="--i:10;">N</span>
-            </div>
-            
-            <!-- Word 4: TOUCH -->
-            <div class="word-group">
-               <span style="--i:11;" class="text-red">T</span>
-               <span style="--i:12;">O</span>
-               <span style="--i:13;">U</span>
-               <span style="--i:14;">C</span>
-               <span style="--i:15;">H</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Client Say</h1>
+            <div class="flex items-center justify-center gap-2 text-sm text-gray-300">
+                <a href="index.html" class="hover:text-brand-red transition">Home</a>
+                <span>/</span>
+                <span class="text-brand-red">Client Say</span>
             </div>
         </div>
     </div>
-    <!-- End Let's Get In Touch -->
-        <div class="footer-grid">
-            <div class="footer-col">
-               <a href="index.html" class="logo footer-logo" style="display: flex; align-items: center; gap: 0px; text-decoration: none;">
-    <img src="jdm logo new 02.png" alt="jdm logo new 02.png" style="height: 40px; width: auto;">
-    <span style="color: #fff; font-size: 22px; font-weight: 700;">JDM Agency</span>
-</a>
-                <p class="footer-desc">We are a leading digital marketing agency dedicated to helping businesses grow and succeed in the digital world.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/jdmagencybd"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://x.com/JDMAgency"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/jdmagency/"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/jolshiridigital"><i class="fa-brands fa-instagram"></i></a>
+
+    <!-- Video Gallery Section -->
+    <section class="py-20 px-4 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            
+            <!-- Featured Video -->
+            <div class="w-full mb-12 shadow-2xl rounded-xl overflow-hidden bg-white">
+                <iframe class="w-full h-[300px] md:h-[500px]" src="https://www.youtube.com/embed/kf13VMDXYZo" title="YouTube video player" allowfullscreen></iframe>
+            </div>
+
+            <!-- Video Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="video-item bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <iframe class="w-full h-[250px]" src="https://www.youtube.com/embed/xZhxg4jNLvM" allowfullscreen></iframe>
+                </div>
+                <div class="video-item bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <iframe class="w-full h-[250px]" src="https://www.youtube.com/embed/zBk54BDpiWs" allowfullscreen></iframe>
+                </div>
+                <div class="video-item bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <iframe class="w-full h-[250px]" src="https://www.youtube.com/embed/Dg2FMb1aZDM" allowfullscreen></iframe>
+                </div>
+                <div class="video-item bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <iframe class="w-full h-[250px]" src="https://www.youtube.com/embed/96OZdFx9of0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Pricing Plan</a></li>
-                    <li><a href="#">Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
+            
+        </div>
+    </section>
+
+    <!-- Let's Get In Touch Pre-Footer Banner -->
+    <section class="bg-brand-darker py-20 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            
+            <div class="waviy-text flex flex-wrap justify-center items-center gap-x-3 gap-y-2 md:gap-5 text-[28px] sm:text-4xl md:text-6xl font-extrabold tracking-wider mb-8">
+                <!-- Word 1: LET'S -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:1;" class="text-brand-red">L</span>
+                   <span style="--i:2;" class="text-brand-red">E</span>
+                   <span style="--i:3;" class="text-brand-red">T</span>
+                   <span style="--i:4;" class="text-brand-red">'</span>
+                   <span style="--i:5;" class="text-brand-red">S</span>
+                </div>
+                
+                <!-- Word 2: GET -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:6;" class="text-brand-red">G</span>
+                   <span style="--i:7;" class="text-brand-red">E</span>
+                   <span style="--i:8;" class="text-brand-red">T</span>
+                </div>
+                
+                <!-- Word 3: IN -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:9;" class="text-white">I</span>
+                   <span style="--i:10;" class="text-white">N</span>
+                </div>
+                
+                <!-- Word 4: TOUCH -->
+                <div class="inline-block whitespace-nowrap">
+                   <span style="--i:11;" class="text-brand-orange">T</span>
+                   <span style="--i:12;" class="text-brand-orange">O</span>
+                   <span style="--i:13;" class="text-brand-orange">U</span>
+                   <span style="--i:14;" class="text-brand-orange">C</span>
+                   <span style="--i:15;" class="text-brand-orange">H</span>
+                </div>
             </div>
-            <div class="footer-col">
-                <h3>Our Services</h3>
-                <ul class="footer-links">
-                    <li><a href="#">Digital Marketing</a></li>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">SEO Optimization</a></li>
-                    <li><a href="#">Content Creation</a></li>
-                    <li><a href="#">Social Media</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Info</h3>
-                <ul class="footer-contact">
-                    <li><i class="fa-solid fa-location-dot"></i> H#5, Sector # 18, Uttara, Dhaka</li>
-                    <li><i class="fa-solid fa-phone"></i> +88 01916-367602</li>
-                    <li><i class="fa-solid fa-envelope"></i> Hello@jolshiridigital.com</li>
-                </ul>
+            
+            <div class="mt-8 max-w-4xl mx-auto h-[1px] bg-brand-red/30 relative">
+                <div class="absolute left-0 top-0 h-[1px] w-1/4 bg-brand-red"></div>
             </div>
         </div>
-        <div class="copyright-area">
-            <p>&copy; 2026 JDM Agency. All Rights Reserved. Designed by JDM.</p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-brand-dark pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+                
+                <!-- Column 1: Contact Info -->
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Contact</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>+8801916-367602</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>Hello@jolshiridigital.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-angles-right text-brand-red mt-1 text-[10px]"></i>
+                            <span>Head Office # 14th Floor, House: 05, Sector: 18, Uttara, Dhaka, Bangladesh</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="mt-8 flex items-center gap-4">
+                        <span class="text-white text-sm font-medium underline underline-offset-4 decoration-brand-red">Follow:</span>
+                        <div class="flex gap-3 text-gray-400 text-sm">
+                            <a href="https://www.facebook.com/jdmagencybd" class="hover:text-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="https://www.linkedin.com/in/jdmagency/" class="hover:text-brand-red transition"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/jolshiridigital" class="hover:text-brand-red transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://x.com/JDMAgency" class="hover:text-brand-red transition"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.youtube.com/@jdm.agency" class="hover:text-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://www.tiktok.com/@jdmagency" class="hover:text-brand-red transition"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-6">Quick Links</h3>
+                    <div class="w-8 h-[2px] bg-brand-red mb-6"></div>
+                    
+                    <div class="grid grid-cols-2 gap-y-3 gap-x-4 text-sm text-gray-400 mb-8">
+                        <a href="company.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Company
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> How It's Work
+                        </a>
+                        <a href="services.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Service
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Case Studies
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Pricing
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Privacy Policy
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Support
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Press media
+                        </a>
+                        <a href="#" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Careers
+                        </a>
+                        <a href="contact.html" class="flex items-center gap-2 hover:text-white transition">
+                            <i class="fa-solid fa-angles-right text-brand-red text-[10px]"></i> Contact
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 3: Consultancy Form -->
+                <div>
+                    <div class="border border-brand-red p-6 rounded bg-brand-darker relative">
+                        <h3 class="text-white text-xl font-bold mb-1">For Free Consultancy</h3>
+                        <p class="text-xs text-gray-500 mb-6">Fields marked with an <span class="text-brand-red">*</span> are required</p>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Name <span class="text-brand-red">*</span></label>
+                                <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Company Name</label>
+                                <input type="text" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Phone <span class="text-brand-red">*</span></label>
+                                <input type="tel" class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition rounded-sm" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-white mb-1">Location <span class="text-brand-red">*</span></label>
+                                <select class="w-full bg-[#1a1f35] border border-gray-700 text-white px-3 py-2 text-sm focus:outline-none focus:border-brand-red transition appearance-none rounded-sm" required>
+                                    <option value="" disabled selected>Select location</option>
+                                    <option value="dhaka">Dhaka, Bangladesh</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <button type="button" class="bg-gray-300 hover:bg-white transition text-black font-semibold text-xs py-2 px-6 rounded-sm mt-2">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500 text-xs">Copyright © 2026 | JDM Agency</p>
+            </div>
         </div>
     </footer>
-<!-- Mobile Menu Toggle Script -->
+
+    <!-- Mobile Menu Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('mobile-menu-btn');
-            const navWrapper = document.getElementById('nav-wrapper');
-            const menuIcon = menuBtn.querySelector('i');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = mobileMenuBtn.querySelector('i');
 
-            menuBtn.addEventListener('click', function() {
-                navWrapper.classList.toggle('active');
-                
-                // Icon change logic
-                if(navWrapper.classList.contains('active')) {
-                    menuIcon.classList.remove('fa-bars');
-                    menuIcon.classList.add('fa-xmark');
-                } else {
+            mobileMenuBtn.addEventListener('click', function() {
+                // Toggle the hidden class on the mobile menu
+                mobileMenu.classList.toggle('hidden');
+
+                // Change icon from hamburger to 'X' (cross) when open
+                if (mobileMenu.classList.contains('hidden')) {
                     menuIcon.classList.remove('fa-xmark');
                     menuIcon.classList.add('fa-bars');
+                } else {
+                    menuIcon.classList.remove('fa-bars');
+                    menuIcon.classList.add('fa-xmark');
                 }
             });
         });
     </script>
+
 </body>
 </html>
