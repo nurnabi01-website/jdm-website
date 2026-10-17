@@ -247,7 +247,7 @@
 .jdm-logo-wrapper {
     position: relative;
     z-index: 100000;
-    width: 130px; /* Green mark er size onujayi adjust kora */
+    width: 130px;
     height: 130px;
     background-color: #ffffff;
     border-radius: 50%;
@@ -257,12 +257,16 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     transition: opacity 0.3s ease, transform 0.3s ease;
     transition-delay: 0.1s;
+    overflow: visible !important; /* Eita deyar fole logor kono ongsho r kete jabe na */
 }
+
+/* JDM Logo Centering */
 .jdm-transition-logo {
-    width: 250px;
+    width: 260px; /* Logo ektu boro kora hoyeche */
     max-width: none !important;
-    margin-top: 25px;
-    margin-left: -15px; /* Minus value deyar fole eta bame shore majhkane asbe */
+    position: relative;
+    left: -45px; /* Minus value dile logo ta baame shore asbe */
+    top: 5px;    /* Plus value dile logo ta niche nambe */
     animation: jdmPulseLoad 1s infinite ease-in-out;
 }
 
