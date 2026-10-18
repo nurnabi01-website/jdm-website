@@ -131,10 +131,102 @@
       transform: translateY(-15px);
     }
   }
+        /* JDM Shutter Transition CSS (12 Slices) */
+#jdm-transition-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: 99999;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shutter {
+    position: absolute;
+    top: 0;
+    width: 8.5%; /* Kono gap jeno na thake tai ektu bariye 8.5% deya */
+    height: 100%;
+    background-color: #0b0f19;
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+/* Shutter Delay (Right to Left open) */
+.shutter:nth-child(12) { transition-delay: 0s; }
+.shutter:nth-child(11) { transition-delay: 0.04s; }
+.shutter:nth-child(10) { transition-delay: 0.08s; }
+.shutter:nth-child(9) { transition-delay: 0.12s; }
+.shutter:nth-child(8) { transition-delay: 0.16s; }
+.shutter:nth-child(7) { transition-delay: 0.20s; }
+.shutter:nth-child(6) { transition-delay: 0.24s; }
+.shutter:nth-child(5) { transition-delay: 0.28s; }
+.shutter:nth-child(4) { transition-delay: 0.32s; }
+.shutter:nth-child(3) { transition-delay: 0.36s; }
+.shutter:nth-child(2) { transition-delay: 0.40s; }
+.shutter:nth-child(1) { transition-delay: 0.44s; }
+
+/* White Round Logo Wrapper */
+.jdm-logo-wrapper {
+    position: relative;
+    z-index: 100000;
+    width: 130px;
+    height: 130px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition-delay: 0.1s;
+    overflow: visible !important; /* Eita deyar fole logor kono ongsho r kete jabe na */
+}
+
+/* JDM Logo Centering */
+.jdm-transition-logo {
+    width: 260px;
+    max-width: none !important;
+    position: relative;
+    left: -2px; /* ডানে-বামে অ্যাডজাস্ট করার জন্য এই ভ্যালুটা বদলাবেন */
+    top: 10px;
+    animation: jdmPulseLoad 1s infinite ease-in-out;
+}
+/* Hide Animation Classes */
+#jdm-transition-overlay.hide-overlay .shutter {
+    transform: scaleX(0);
+}
+#jdm-transition-overlay.hide-overlay .jdm-logo-wrapper {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+@keyframes jdmPulseLoad {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
 </style>
 </head>
 <body class="bg-brand-lightBg text-gray-800 antialiased">
-
+<!-- JDM Page Transition Overlay (12 Shutters) -->
+<div id="jdm-transition-overlay">
+    <div class="shutter" style="left: 0%;"></div>
+    <div class="shutter" style="left: 8.33%;"></div>
+    <div class="shutter" style="left: 16.66%;"></div>
+    <div class="shutter" style="left: 25%;"></div>
+    <div class="shutter" style="left: 33.33%;"></div>
+    <div class="shutter" style="left: 41.66%;"></div>
+    <div class="shutter" style="left: 50%;"></div>
+    <div class="shutter" style="left: 58.33%;"></div>
+    <div class="shutter" style="left: 66.66%;"></div>
+    <div class="shutter" style="left: 75%;"></div>
+    <div class="shutter" style="left: 83.33%;"></div>
+    <div class="shutter" style="left: 91.66%;"></div>
+    
+    <div class="jdm-logo-wrapper">
+        <img src="jdm logo new 02.png" alt="JDM Agency" class="jdm-transition-logo">
+    </div>
+</div>
     <!-- Top Bar -->
     <div class="bg-brand-darker text-white text-xs py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-2">
         <div class="flex items-center gap-6">
@@ -443,5 +535,35 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const overlay = document.getElementById('jdm-transition-overlay');
+        
+        // Page fully load howar por logo ta hide hoye jabe
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                overlay.classList.add('hide-overlay');
+            }, 600); // 0.6 second delay deya hoyeche smooth lagar jonno
+        });
+
+        // Onno kono link e click korle abar logo ta show korbe
+        const links = document.querySelectorAll('a[href]:not([target="_blank"])');
+        links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetUrl = this.getAttribute('href');
+                
+                // Hash link ba same page link ignore korbe
+                if (targetUrl && !targetUrl.startsWith('#') && !targetUrl.startsWith('javascript')) {
+                    e.preventDefault();
+                    overlay.classList.remove('hide-overlay');
+                    
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 500); // 0.5 second por notun page e niye jabe
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
